@@ -24,7 +24,9 @@ public class SetDemo {
         books.add(book4);
         books.add(book5);
 
-        books.stream().map(ignored -> "Book [title={}, author={}, year={}]").forEach(logger::info);
+        for (Book book : books) {
+            logger.info(String.format("Book [title=%s, author=%s, year=%d]", book.getTitle(), book.getAuthor(), book.getYear()));
+        }
     }
 
     public static void main(String[] args) {
