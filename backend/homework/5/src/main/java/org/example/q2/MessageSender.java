@@ -15,7 +15,7 @@ class MessageSender implements Runnable {
     @Override
     public void run() {
         try {
-            String message = "Message from " + name;
+            String message = "Message " + Thread.currentThread().getName();
             String ans = name + " sending message: " + message;
             logger.info(ans);
             messageQueue.enqueue(message);

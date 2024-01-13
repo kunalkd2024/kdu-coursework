@@ -1,6 +1,10 @@
 package org.example.q1;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+/**
+ * This class represents a message receiver that implements the Runnable interface,
+ * used for concurrent message processing. It logs received messages using SLF4J logging.
+ */
 class MessageReceiver implements Runnable {
     private final String name;
     private final MessageQueue messageQueue;

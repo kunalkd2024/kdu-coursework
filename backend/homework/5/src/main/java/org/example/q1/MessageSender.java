@@ -1,7 +1,10 @@
 package org.example.q1;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+/**
+ * This class represents a message sender that implements the Runnable interface,
+ * used for concurrent message processing. It logs sent messages using SLF4J logging.
+ */
 class MessageSender implements Runnable {
     private static final Logger logger = LoggerFactory.getLogger(MessageSender.class);
     private final String name;
@@ -13,7 +16,7 @@ class MessageSender implements Runnable {
     }
 
     public void run() {
-        String message=" Sender"+":"+Thread.currentThread().getName();
+        String message= "Message " + Thread.currentThread().getName() ;
         String ans = name + " sending message: " + message;
         logger.info(ans);
         try {

@@ -1,6 +1,10 @@
 package org.example.q1;
 
 public class Main {
+    /**
+     * This class represents the main application that demonstrates the usage of MessageQueue,
+     * MessageSender, and MessageReceiver for concurrent message processing.
+     */
     public static void main(String[] args) {
         MessageQueue messageQueue = new MessageQueue();
 
