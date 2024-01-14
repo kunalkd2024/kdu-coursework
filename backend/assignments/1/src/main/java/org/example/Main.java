@@ -159,7 +159,7 @@ public class Main {
      */
     public static void executeTransactions(JsonNode jsonTransactions, CountDownLatch latch) {
         for (JsonNode transaction : jsonTransactions) {
-            Transaction executeTransaction = new Transaction(transaction, latch);
+            ExecuteTransaction executeTransaction = new ExecuteTransaction(transaction, latch);
             executeTransaction.run();
         }
         TradingSystem.displayTopNCoins(8);

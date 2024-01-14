@@ -4,21 +4,21 @@ import com.fasterxml.jackson.databind.JsonNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.concurrent.CountDownLatch;
-public class Transaction implements Runnable {
-    private static final Logger logger = LoggerFactory.getLogger(Transaction.class);
+public class ExecuteTransaction implements Runnable {
+    private static final Logger logger = LoggerFactory.getLogger(ExecuteTransaction.class);
     private JsonNode transactionData;
     private CountDownLatch latch;
     /**
      * Default constructor for ExecuteTransaction.
      */
-    public Transaction() {}
+    public ExecuteTransaction() {}
     /**
      * Constructor for ExecuteTransaction with transaction data and a latch.
      *
      * @param transactionData The JSON representation of the transaction.
      * @param latch           A CountDownLatch for synchronization.
      */
-    public Transaction(JsonNode transactionData, CountDownLatch latch) {
+    public ExecuteTransaction(JsonNode transactionData, CountDownLatch latch) {
         this.transactionData = transactionData;
         this.latch = latch;
     }
