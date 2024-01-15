@@ -26,7 +26,7 @@ public class Main {
     public static void main(String[] args) {
         loadFromCSV();
 
-        JsonNode jsonTransactions = loadFromJson();
+        JsonNode jsonTransactions = loadFromJson("test_transaction.json");
         if (jsonTransactions != null) {
             CountDownLatch latch = new CountDownLatch(jsonTransactions.size());
             executeTransactions(jsonTransactions, latch);
@@ -54,7 +54,7 @@ public class Main {
             if (inputStream != null) {
                 jsonNode = new ObjectMapper().readTree(inputStream);
             } else {
-                logger.error("Could not find the file: {}", fileName);
+                logger.error("Could not find the file: " + path);
             }
         } catch (IOException e) {
             logger.error("Error reading JSON file: {}", e.getMessage());
@@ -84,7 +84,7 @@ public class Main {
      *
      * @return A list of {@code Coin} objects loaded from the CSV file.
      */
-    private static List<Coin> loadCoins(Path path) {
+    private static List<Coin> loadCoins(String path) {
         try {
             List<CSVRecord> coinsData = (List<CSVRecord>) DataLoader.loadData(path, DataLoader.FileType.CSV);
             return convertToCoins(coinsData);
@@ -99,7 +99,7 @@ public class Main {
      *
      * @return A list of {@code Trader} objects loaded from the CSV file.
      */
-    private static List<Trader> loadTraders(Path path) {
+    private static List<Trader> loadTraders(String path) {
         try {
             List<CSVRecord> tradersData = (List<CSVRecord>) DataLoader.loadData(path, DataLoader.FileType.CSV);
             return convertToTraders(tradersData);
