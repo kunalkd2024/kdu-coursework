@@ -35,15 +35,15 @@ public class MainTest {
         coinNameMap = new HashMap<>();
         coinCodeMap = new HashMap<>();
 
-        coinOne = new Coins(1, "Bitcoin", "BTC", 10000.0, 100L);
-        Coins coinTwo = new Coins(2, "Ethereum", "ETH", 5000.0, 50L);
-        Coins coinThree = new Coins(3, "Cardano", "ADA", 2000.0, 30L);
-        Coins coinFour = new Coins(3, "Solana", "SOL", 1000.0, 150L);
+        coinOne = new Coin(1, "Bitcoin", "BTC", 10000.0, 100L);
+        Coin coinTwo = new Coin(2, "Ethereum", "ETH", 5000.0, 50L);
+        Coin coinThree = new Coin(3, "Cardano", "ADA", 2000.0, 30L);
+        Coin coinFour = new Coin(3, "Solana", "SOL", 1000.0, 150L);
 
-        coins.add(coinOne);
-        coins.add(coinTwo);
-        coins.add(coinThree);
-        coins.add(coinFour);
+        coin.add(coinOne);
+        coin.add(coinTwo);
+        coin.add(coinThree);
+        coin.add(coinFour);
 
         coinNameMap.put(coinOne.getCoinName(), coinOne);
         coinNameMap.put(coinTwo.getCoinName(), coinTwo);
