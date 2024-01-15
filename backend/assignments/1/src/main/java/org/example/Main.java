@@ -24,7 +24,9 @@ public class Main {
      * @param args Command-line arguments (not used in this application).
      */
     public static void main(String[] args) {
-        loadFromCSV();
+        loadFromCSVcoins("src/test/resources/coins.csv");
+        loadFromCSVtraders("src/test/resources/traders.csv");
+
 
         JsonNode jsonTransactions = loadFromJson("src/test/resources/test_transaction.json");
         if (jsonTransactions != null) {
@@ -65,15 +67,17 @@ public class Main {
     /**
      * Loads data from CSV files into the trading system, including coins and traders.
      */
-    private static void loadFromCSV() {
-        List<Coin> coins = loadCoins("src/test/resources/coins.csv");
+    private static void loadFromCSVcoins(String path) {
+        List<Coin> coins = loadCoins(path);
         for (Coin coin : coins) {
             TradingSystem.symbolToCoin.put(coin.getSymbol(), coin);
             TradingSystem.coinNameToSymbol.put(coin.getName(), coin.getSymbol());
             TradingSystem.coinsSet.add(coin);
         }
+    }
 
-        List<Trader> traders = loadTraders("src/test/resources/traders.csv");
+    private static void loadFromCSVtraders(String path) {
+        List<Trader> traders = loadTraders(path);
         for (Trader trader : traders) {
             TradingSystem.walletToTrader.put(trader.getWalletAddress(), trader);
         }
