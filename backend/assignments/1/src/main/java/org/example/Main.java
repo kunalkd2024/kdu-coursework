@@ -67,20 +67,22 @@ public class Main {
     /**
      * Loads data from CSV files into the trading system, including coins and traders.
      */
-    public static void loadFromCSVcoins(String path) {
+    public static ArrayList<String[]> loadFromCSVcoins(String path) {
         List<Coin> coins = loadCoins(path);
         for (Coin coin : coins) {
             TradingSystem.symbolToCoin.put(coin.getSymbol(), coin);
             TradingSystem.coinNameToSymbol.put(coin.getName(), coin.getSymbol());
             TradingSystem.coinsSet.add(coin);
         }
+        return new ArrayList<String[]>();
     }
 
-    public static void loadFromCSVtraders(String path) {
+    public static ArrayList<String[]> loadFromCSVtraders(String path) {
         List<Trader> traders = loadTraders(path);
         for (Trader trader : traders) {
             TradingSystem.walletToTrader.put(trader.getWalletAddress(), trader);
         }
+        return new ArrayList<String[]>();
     }
 
     /**
