@@ -45,11 +45,11 @@ public class MainTest {
         coin.add(coinThree);
         coin.add(coinFour);
 
-        coinNameMap.put(coinOne.getCoinName(), coinOne);
-        coinNameMap.put(coinTwo.getCoinName(), coinTwo);
+        coinNameMap.put(coinOne.getName(), coinOne);
+        coinNameMap.put(coinTwo.getName(), coinTwo);
 
-        coinCodeMap.put(coinOne.getCoinSymbol(), coinOne);
-        coinCodeMap.put(coinTwo.getCoinSymbol(), coinTwo);
+        coinCodeMap.put(coinOne.getSymbol(), coinOne);
+        coinCodeMap.put(coinTwo.getSymbol(), coinTwo);
     }
 
     /**
@@ -71,7 +71,7 @@ public class MainTest {
         expectedCoins.add(new String[]{"3", "4", "BNB", "BNB", "351.39", "165116761"});
         expectedCoins.add(new String[]{"4", "5", "USD Coin", "USDC", "1.00", "47861732704"});
         expectedCoins.add(new String[]{"5", "6", "Cardano", "ADA", "1.02", "33550574442"});
-        ArrayList<String[]> actual = Main.parseCSV(coinCsvPath);
+        ArrayList<String[]> actual = Main.loadFromCSV(coinCsvPath);
 
         Assertions.assertEquals(expectedCoins.size(), actual.size());
         for (int i = 0; i < expectedCoins.size(); i++) {
@@ -89,7 +89,7 @@ public class MainTest {
         expectedTraders.add(new String[]{"3", "Lenna", "Paprocki", "907-385-4412", "0xab190b6af9471e4c8e717418e940423c"});
         expectedTraders.add(new String[]{"4", "Donette", "Foller", "513-570-1893", "0xbe3887c02d3d33e16ba49b3607c50e3a"});
         expectedTraders.add(new String[]{"5", "Simona", "Morasca", "419-503-2484", "0xbd670dbca4260f5f1403b555bbe2dd9e"});
-        ArrayList<String[]> actualTraders = Main.parseCSV(traderCsvPath);
+        ArrayList<String[]> actualTraders = Main.loadFromCSV(traderCsvPath);
 
         Assertions.assertEquals(expectedTraders.size(), actualTraders.size());
 
@@ -120,7 +120,7 @@ public class MainTest {
         CountDownLatch latch = new CountDownLatch(numberOfThreads);
 
         try {
-            transactionArray = Main.parseJsonFile("src/test/resources/test_transaction_1.json");
+            transactionArray = Main.loadFromJson("src/test/resources/test_transaction_1.json");
 
             new Main();
             Main.executeTransactions(transactionArray, latch);
@@ -158,7 +158,7 @@ public class MainTest {
         CountDownLatch latch = new CountDownLatch(numberOfThreads);
 
         try {
-            transactionArray = Main.parseJsonFile("src/test/resources/test_transaction_2.json");
+            transactionArray = Main.loadFromJson("src/test/resources/test_transaction_2.json");
 
             new Main();
             Main.executeTransactions(transactionArray, latch);
@@ -196,7 +196,7 @@ public class MainTest {
         CountDownLatch latch = new CountDownLatch(numberOfThreads);
 
         try {
-            transactionArray = Main.parseJsonFile("src/test/resources/test_transaction_3.json");
+            transactionArray = Main.loadFromJson("src/test/resources/test_transaction_3.json");
 
             Main.executeTransactions(transactionArray, latch);
         } catch (IOException e) {
@@ -232,7 +232,7 @@ public class MainTest {
         CountDownLatch latch = new CountDownLatch(numberOfThreads);
 
         try {
-            transactionArray = Main.parseJsonFile("src/test/resources/test_transaction_4.json");
+            transactionArray = Main.loadFromJson("src/test/resources/test_transaction_4.json");
 
             Main.executeTransactions(transactionArray, latch);
         } catch (IOException e) {
