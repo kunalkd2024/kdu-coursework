@@ -47,7 +47,7 @@ public class Main {
      *
      * @return A {@code JsonNode} containing the loaded data.
      */
-    private static JsonNode loadFromJson(String path) {
+    public static JsonNode loadFromJson(String path) {
         JsonNode jsonNode = null;
         try {
             ClassLoader classLoader = Main.class.getClassLoader();
