@@ -45,12 +45,11 @@ public class Main {
      *
      * @return A {@code JsonNode} containing the loaded data.
      */
-    private static JsonNode loadFromJson() {
+    private static JsonNode loadFromJson(Path path) {
         JsonNode jsonNode = null;
         try {
-            String fileName = "test_transaction.json";
             ClassLoader classLoader = Main.class.getClassLoader();
-            InputStream inputStream = classLoader.getResourceAsStream(fileName);
+            InputStream inputStream = classLoader.getResourceAsStream(path);
 
             if (inputStream != null) {
                 jsonNode = new ObjectMapper().readTree(inputStream);
@@ -85,9 +84,9 @@ public class Main {
      *
      * @return A list of {@code Coin} objects loaded from the CSV file.
      */
-    private static List<Coin> loadCoins() {
+    private static List<Coin> loadCoins(Path path) {
         try {
-            List<CSVRecord> coinsData = (List<CSVRecord>) DataLoader.loadDataFromResources("coins.csv", DataLoader.FileType.CSV);
+            List<CSVRecord> coinsData = (List<CSVRecord>) DataLoader.loadData(path, DataLoader.FileType.CSV);
             return convertToCoins(coinsData);
         } catch (Exception e) {
             logger.error("Error loading coins from CSV: {}", e.getMessage());
@@ -100,9 +99,9 @@ public class Main {
      *
      * @return A list of {@code Trader} objects loaded from the CSV file.
      */
-    private static List<Trader> loadTraders() {
+    private static List<Trader> loadTraders(Path path) {
         try {
-            List<CSVRecord> tradersData = (List<CSVRecord>) DataLoader.loadDataFromResources("traders.csv", DataLoader.FileType.CSV);
+            List<CSVRecord> tradersData = (List<CSVRecord>) DataLoader.loadData(path, DataLoader.FileType.CSV);
             return convertToTraders(tradersData);
         } catch (Exception e) {
             logger.error("Error loading traders from CSV: {}", e.getMessage());

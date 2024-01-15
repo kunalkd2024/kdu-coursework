@@ -120,7 +120,7 @@ public class MainTest {
         CountDownLatch latch = new CountDownLatch(numberOfThreads);
 
         try {
-            transactionArray = Main.loadFromJson("src/test/resources/test_transaction_1.json");
+            transactionArray = Main.loadFromJson("test_transaction_1.json");
 
             new Main();
             Main.executeTransactions(transactionArray, latch);
@@ -158,7 +158,7 @@ public class MainTest {
         CountDownLatch latch = new CountDownLatch(numberOfThreads);
 
         try {
-            transactionArray = Main.loadFromJson("src/test/resources/test_transaction_2.json");
+            transactionArray = Main.loadFromJson("test_transaction_2.json");
 
             new Main();
             Main.executeTransactions(transactionArray, latch);
@@ -196,7 +196,7 @@ public class MainTest {
         CountDownLatch latch = new CountDownLatch(numberOfThreads);
 
         try {
-            transactionArray = Main.loadFromJson("src/test/resources/test_transaction_3.json");
+            transactionArray = Main.loadFromJson("test_transaction_3.json");
 
             Main.executeTransactions(transactionArray, latch);
         } catch (IOException e) {
@@ -232,7 +232,7 @@ public class MainTest {
         CountDownLatch latch = new CountDownLatch(numberOfThreads);
 
         try {
-            transactionArray = Main.loadFromJson("src/test/resources/test_transaction_4.json");
+            transactionArray = Main.loadFromJson("test_transaction_4.json");
 
             Main.executeTransactions(transactionArray, latch);
         } catch (IOException e) {
