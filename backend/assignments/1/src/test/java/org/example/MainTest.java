@@ -22,10 +22,10 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class MainTest {
 
-    private static Map<String, Coins> coinNameMap;
-    private static Map<String, Coins> coinCodeMap;
-    private static Coins coinOne;
-    private static final List<Coins> coins = new ArrayList<>();
+    private static Map<String, Coin> coinNameMap;
+    private static Map<String, Coin> coinCodeMap;
+    private static Coin coinOne;
+    private static final List<Coin> coin = new ArrayList<>();
 
     /**
      * Sets up test data before running any tests.
