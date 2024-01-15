@@ -26,7 +26,7 @@ public class Main {
     public static void main(String[] args) {
         loadFromCSV();
 
-        JsonNode jsonTransactions = loadFromJson("test_transaction.json");
+        JsonNode jsonTransactions = loadFromJson("src/test/resources/test_transaction.json");
         if (jsonTransactions != null) {
             CountDownLatch latch = new CountDownLatch(jsonTransactions.size());
             executeTransactions(jsonTransactions, latch);
@@ -66,14 +66,14 @@ public class Main {
      * Loads data from CSV files into the trading system, including coins and traders.
      */
     private static void loadFromCSV() {
-        List<Coin> coins = loadCoins();
+        List<Coin> coins = loadCoins("src/test/resources/coins.csv");
         for (Coin coin : coins) {
             TradingSystem.symbolToCoin.put(coin.getSymbol(), coin);
             TradingSystem.coinNameToSymbol.put(coin.getName(), coin.getSymbol());
             TradingSystem.coinsSet.add(coin);
         }
 
-        List<Trader> traders = loadTraders();
+        List<Trader> traders = loadTraders("src/test/resources/traders.csv");
         for (Trader trader : traders) {
             TradingSystem.walletToTrader.put(trader.getWalletAddress(), trader);
         }

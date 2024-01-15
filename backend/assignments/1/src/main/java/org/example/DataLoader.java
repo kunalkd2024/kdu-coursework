@@ -24,7 +24,7 @@ public class DataLoader {
      * @return A list of CSV records if the file type is CSV, or a JsonNode if the file type is JSON.
      * @throws IOException If an I/O error occurs while reading the file.
      */
-    public static Object loadDataFromResources(String fileName, FileType fileType) throws IOException {
+    public static Object loadData(String fileName, FileType fileType) throws IOException {
         // Use ClassLoader to load the resource
         ClassLoader classLoader = DataLoader.class.getClassLoader();
         InputStream inputStream = classLoader.getResourceAsStream(fileName);
