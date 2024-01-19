@@ -3,7 +3,6 @@ package org.example;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class Choice {
     public static List<String> getBowlers40(List<Player> players, String team){
@@ -35,24 +34,26 @@ public class Choice {
                 .map(Player::getName);
     }
 
-    public static List<String> highestThree(List<Player> players, String team){
-        String wicketTaker= String.valueOf(highestWicketThree(players, team));
-        String runMaker= String.valueOf(highestRunThree(players, team));
-        System.out.println("Highest wicket taker is " + wicketTaker);
+    public static void highestThree(List<Player> players){
+        List<String> wicketTaker= highestWicketThree(players);
+        List<String> runMaker= highestRunThree(players);
+        System.out.println("Highest wicket takers of the season are " + wicketTaker);
         System.out.println("Highest run maker is " + runMaker);
-        return players.stream()
-                .filter(p -> p.getTeam().equalsIgnoreCase(team))
-                .filter(p -> p.getWickets() >= 40)
-                .map(Player::getName)
-                .toList();
     }
 
-    private static List<String> highestWicketThree(List<Player> players, String team){
+    private static List<String> highestWicketThree(List<Player> players){
         return players.stream()
                 .sorted(Comparator.comparing(player -> -player.getWickets()))
                 .map(Player::getName)
+                .limit(3)
                 .toList();
     }
 
-
+    private static List<String> highestRunThree(List<Player> players){
+        return players.stream()
+                .sorted(Comparator.comparing(player -> -player.getRuns()))
+                .map(Player::getName)
+                .limit(3)
+                .toList();
+    }
 }
