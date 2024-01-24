@@ -2,7 +2,9 @@ package org.example.services;
 
 import org.example.entities.Speaker;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ServiceSpeaker {
 
     private ServiceSpeaker(){

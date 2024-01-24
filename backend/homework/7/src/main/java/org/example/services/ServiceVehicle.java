@@ -3,19 +3,16 @@ package org.example.services;
 import jakarta.annotation.PostConstruct;
 import org.example.entities.Inventory;
 import org.example.entities.Vehicle;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-@Component
 public abstract class ServiceVehicle {
     private ServiceTyre serviceTyre;
     private ServiceSpeaker serviceSpeaker;
     protected Inventory inventory;
-    @Autowired
     protected ServiceVehicle(ServiceTyre serviceTyre, ServiceSpeaker serviceSpeaker,Inventory inventory) {
         this.serviceTyre = serviceTyre;
         this.serviceSpeaker = serviceSpeaker;

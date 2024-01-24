@@ -1,14 +1,15 @@
 package org.example.services;
 
 import org.example.entities.Tyre;
-import org.springframework.context.annotation.Bean;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class ServiceTyre {
 
     private ServiceTyre(){
 
     }
-    @Bean
     public static Tyre tyre1(){
         Tyre tyre = new Tyre();
         tyre.setBrand("Bridgestone");
@@ -16,7 +17,6 @@ public class ServiceTyre {
         return tyre;
     }
 
-    @Bean
     public static Tyre tyre2(){
         Tyre tyre = new Tyre();
         tyre.setBrand("MRF");

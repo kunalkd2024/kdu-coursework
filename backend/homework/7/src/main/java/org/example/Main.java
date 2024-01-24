@@ -9,12 +9,19 @@ import org.example.util.Logging;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Main {
-    @Qualifier("factory1")
+
     private VehicleFactory1 factory1;
-    @Qualifier("factory2")
     private VehicleFactory2 factory2;
+
+    @Autowired
+    public Main(@Qualifier("factoryOne") VehicleFactory1 factory1,@Qualifier("factoryTwo") VehicleFactory2 factory2){
+        this.factory1=factory1;
+        this.factory2=factory2;
+    }
     Logging.LoggerType logger = Logging.LoggerType.INFO;
     public static void main(String[] args) {
         var context=new AnnotationConfigApplicationContext(Configure.class);
