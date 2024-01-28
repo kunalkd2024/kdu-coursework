@@ -11,6 +11,9 @@ import com.caching.assignment2.model.PositionstackResponse;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Service class responsible for interacting with a third-party geocoding API.
+ */
 public class ThirdPartyGeocodingService {
 
     private final Logging logging = new Logging();
@@ -20,6 +23,12 @@ public class ThirdPartyGeocodingService {
     private final Cache<String, GeoCodingResult> forwardGeocodingCache;
     private final Cache<String, GeoCodingResult> reverseGeocodingCache;
 
+    /**
+     * Constructor for ThirdPartyGeocodingService.
+     *
+     * @param apiKey       The API key for accessing the geocoding service.
+     * @param restTemplate The RestTemplate for making HTTP requests.
+     */
     public ThirdPartyGeocodingService(String apiKey, RestTemplate restTemplate) {
         this.apiKey = apiKey;
         this.restTemplate = restTemplate;
@@ -34,6 +43,13 @@ public class ThirdPartyGeocodingService {
                 .build();
     }
 
+    /**
+     * Retrieves geocoding information based on the provided address.
+     *
+     * @param address The address for which geocoding information is requested.
+     * @return GeoCodingResult containing region, latitude, and longitude.
+     * @throws GeoServiceException If no geocoding result is found.
+     */
     public GeoCodingResult forwardGeocoding(String address) {
         GeoCodingResult cachedResult = forwardGeocodingCache.getIfPresent(address);
         if (cachedResult != null) {
@@ -66,6 +82,14 @@ public class ThirdPartyGeocodingService {
         }
     }
 
+    /**
+     * Retrieves reverse geocoding information based on the provided latitude and longitude.
+     *
+     * @param latitude  The latitude for reverse geocoding.
+     * @param longitude The longitude for reverse geocoding.
+     * @return GeoCodingResult containing label, latitude, and longitude.
+     * @throws GeoServiceException If no geocoding result is found.
+     */
     public GeoCodingResult reverseGeocoding(double latitude, double longitude) {
         String cacheKey = latitude + "," + longitude;
         GeoCodingResult cachedResult = reverseGeocodingCache.getIfPresent(cacheKey);
@@ -96,10 +120,18 @@ public class ThirdPartyGeocodingService {
         }
     }
 
+    /**
+     * Evicts the cache entry for a specific forward geocoding request.
+     *
+     * @param address The address for which to evict the cache entry.
+     */
     public void evictForwardGeocodingCache(String address) {
         forwardGeocodingCache.invalidate(address);
     }
 
+    /**
+     * Evicts all entries in the reverse geocoding cache.
+     */
     public void evictAllReverseGeocodingCache() {
         reverseGeocodingCache.invalidateAll();
     }
