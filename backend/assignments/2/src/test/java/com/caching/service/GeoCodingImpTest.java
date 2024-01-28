@@ -26,10 +26,9 @@ import java.util.List;
 import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
-@SpringBootTest
+@SpringBootTest(classes = Assignment2Application.class)
 @AutoConfigureMockMvc
 @ComponentScan(basePackages = "com.caching")
-@ContextConfiguration(classes = {Assignment2Application.class})
 public class GeoCodingImpTest {
     private static Object expectedGeoCodingApiResponse;
     private static Object expectedReverseGeoCodingApiResponse;
@@ -139,7 +138,7 @@ public class GeoCodingImpTest {
 //
     @Test
     @Order(2)
-    public void testGetReverseGeoCode() throws Exception {
+    void testGetReverseGeoCode() throws Exception {
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/reverse-geocoding")
                         .param("latitude", "37.431155")
                         .param("longitude", "-120.781462")
@@ -260,19 +259,7 @@ public class GeoCodingImpTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
-    //    @BeforeAll
-//    public static void setup(@Value("${geocoding-url}") String geoCodingUrl,
-//                             @Value("${reverse-geocoding-url}") String reverseGeoCodingUrl) {
-//        geoCodingTestUrl = geoCodingUrl;
-//        reverseGeoCodingTestUrl = reverseGeoCodingUrl;
-//        RestTemplate restTemplate = new RestTemplate();
-//        expectedGeoCodingApiResponse = restTemplate.getForObject(
-//                geoCodingTestUrl,
-//                Object.class);
-//        expectedReverseGeoCodingApiResponse = restTemplate.getForObject(
-//                reverseGeoCodingTestUrl,
-//                Object.class);
-//    }
+
     @BeforeAll
     public static void setup(@Value("${geocoding-url}") String geoCodingUrl,
                              @Value("${reverse-geocoding-url}") String reverseGeoCodingUrl) {
