@@ -1,7 +1,7 @@
 package com.example.jdbc.service;
 
-import com.example.jdbc.DAO.TenantDAO;
-import com.example.jdbc.DTO.TenantDTO;
+import com.example.jdbc.dao.TenantDAO;
+import com.example.jdbc.dto.TenantDTO;
 import com.example.jdbc.model.Tenant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.example.jdbc.DAO;
+package com.example.jdbc.dao;
 
 
 import com.example.jdbc.mapper.ShiftUserRowMapper;

@@ -1,7 +1,7 @@
 package com.example.jdbc.service;
 
-import com.example.jdbc.DAO.ShiftDAO;
-import com.example.jdbc.DTO.ShiftDTO;
+import com.example.jdbc.dao.ShiftDAO;
+import com.example.jdbc.dto.ShiftDTO;
 import com.example.jdbc.model.Shift;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

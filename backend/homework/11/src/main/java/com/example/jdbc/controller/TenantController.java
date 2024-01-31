@@ -1,7 +1,7 @@
 package com.example.jdbc.controller;
 
 
-import com.example.jdbc.DTO.*;
+import com.example.jdbc.dto.*;
 import com.example.jdbc.model.Shift;
 import com.example.jdbc.model.ShiftType;
 import com.example.jdbc.model.ShiftUser;
@@ -17,23 +17,28 @@ import java.util.UUID;
 
 @RestController
 public class TenantController {
-    @Autowired
-    UserService userService;
+    private final UserService userService;
+    private final ShiftTypeService shiftTypeService;
+    private final ShiftUserService shiftUserService;
+    private final ShiftService shiftService;
+    private final AllService allService;
+    private final TenantService tenantService;
 
     @Autowired
-    ShiftTypeService shiftTypeService;
-
-    @Autowired
-    ShiftUserService shiftUserService;
-
-    @Autowired
-    ShiftService shiftService;
-
-    @Autowired
-    AllService allService;
-
-    @Autowired
-    TenantService tenantService;
+    public TenantController(
+            UserService userService,
+            ShiftTypeService shiftTypeService,
+            ShiftUserService shiftUserService,
+            ShiftService shiftService,
+            AllService allService,
+            TenantService tenantService) {
+        this.userService = userService;
+        this.shiftTypeService = shiftTypeService;
+        this.shiftUserService = shiftUserService;
+        this.shiftService = shiftService;
+        this.allService = allService;
+        this.tenantService = tenantService;
+    }
 
     @GetMapping("/users/all")
     public ResponseEntity<List<User>> getAllUsers() {

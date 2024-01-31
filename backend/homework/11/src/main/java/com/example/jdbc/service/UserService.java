@@ -1,8 +1,8 @@
 package com.example.jdbc.service;
 
 
-import com.example.jdbc.DAO.UserDAO;
-import com.example.jdbc.DTO.UserDTO;
+import com.example.jdbc.dao.UserDAO;
+import com.example.jdbc.dto.UserDTO;
 import com.example.jdbc.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

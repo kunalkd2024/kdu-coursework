@@ -1,4 +1,4 @@
-package com.example.jdbc.DTO;
+package com.example.jdbc.dto;
 
 
 import lombok.AllArgsConstructor;

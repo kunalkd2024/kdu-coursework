@@ -1,10 +1,10 @@
 package com.example.jdbc.service;
 
-import com.example.jdbc.DAO.ShiftDAO;
-import com.example.jdbc.DAO.ShiftTypeDAO;
-import com.example.jdbc.DAO.ShiftUserDAO;
-import com.example.jdbc.DAO.UserDAO;
-import com.example.jdbc.DTO.AllDTO;
+import com.example.jdbc.dao.ShiftDAO;
+import com.example.jdbc.dao.ShiftTypeDAO;
+import com.example.jdbc.dao.ShiftUserDAO;
+import com.example.jdbc.dao.UserDAO;
+import com.example.jdbc.dto.AllDTO;
 import com.example.jdbc.model.Shift;
 import com.example.jdbc.model.ShiftType;
 import com.example.jdbc.model.ShiftUser;
@@ -14,16 +14,22 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AllService {
+    private final UserDAO userDAO;
+    private final ShiftDAO shiftDAO;
+    private final ShiftTypeDAO shiftTypeDAO;
+    private final ShiftUserDAO shiftUserDAO;
 
-
     @Autowired
-    UserDAO userDAO;
-    @Autowired
-    ShiftDAO shiftDAO;
-    @Autowired
-    ShiftTypeDAO shiftTypeDAO;
-    @Autowired
-    ShiftUserDAO shiftUserDAO;
+    public AllService(
+            UserDAO userDAO,
+            ShiftDAO shiftDAO,
+            ShiftTypeDAO shiftTypeDAO,
+            ShiftUserDAO shiftUserDAO) {
+        this.userDAO = userDAO;
+        this.shiftDAO = shiftDAO;
+        this.shiftTypeDAO = shiftTypeDAO;
+        this.shiftUserDAO = shiftUserDAO;
+    }
 
     public void addAll(AllDTO allDTO) {
         UserService userService = new UserService();
