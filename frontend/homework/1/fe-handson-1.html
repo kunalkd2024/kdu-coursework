@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kickdrum Official Site</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- Header Section -->
     <header>
         <h1>Welcome to Kickdrum Official Site</h1>
-        <p>Mitigate technical risk. Maximize business impact.</p>
+        <p id="subHeaderLine">Mitigate technical risk. Maximize business impact.</p>
     </header>
 
     <!-- Navigation Section -->
@@ -30,13 +31,13 @@
             <article>
                 <h2>Home Section</h2>
                 <img src="kickdrum.jpg" alt="Kickdrum about image">
-                <p>We are <strong>enterprise-grade</strong> engineers, architects, and strategists. With a <em>design-driven</em> philosophy, our development approach decreases technical debt, improves customer experiences, and increases enterprise value.</p>
+                <p class="para">We are <strong>enterprise-grade</strong> engineers, architects, and strategists. With a <em>design-driven</em> philosophy, our development approach decreases technical debt, improves customer experiences, and increases enterprise value.</p>
 
-                <p>We partner with both investors and their portfolio companies across the full lifecycle - from diligence through divestiture – to identify, plan, and execute technology strategies for <strong>revenue growth<sup>*</sup></strong>, <strong>profit optimization<sub>+</sub></strong>, and <strong><del>value enhancement</del>*</strong>.</p>
+                <p class="para">We partner with both investors and their portfolio companies across the full lifecycle - from diligence through divestiture – to identify, plan, and execute technology strategies for <strong>revenue growth<sup>*</sup></strong>, <strong>profit optimization<sub>+</sub></strong>, and <strong><del>value enhancement</del>*</strong>.</p>
 
-                <p>Our work pre- and post-transaction is investment-driven - from our proven maturity assessment model to our value creation solutions, we bring real-world operating wisdom to your process.</p>
+                <p class="para">Our work pre- and post-transaction is investment-driven - from our proven maturity assessment model to our value creation solutions, we bring real-world operating wisdom to your process.</p>
 
-                <blockquote>
+                <blockquote id="quote">
                     <p>"From our proven maturity assessment model to our value creation solutions, we bring real-world operating wisdom to your process."</p>
                 </blockquote>
             </article>
@@ -77,7 +78,7 @@
                     <div>
                         <label for="textarea">Give a brief about the problem you would like us to resolve :</label>
                         <br>
-                        <textarea id="textarea" name="textarea" rows="6" cols="80"></textarea>
+                        <textarea tabindex="0" id="textarea" name="textarea" rows="6" cols="80"></textarea>
                     </div>
                     <br>
 
@@ -85,7 +86,7 @@
                     <div>
                         <label>Which service would you like to choose : </label>
                         <br>
-                        <label for="radio1"><input type="radio" id="radio1" name="radio" value="option1"> Technology Maturity & Risk</label>
+                        <label for="radio1"><input tabindex="0" type="radio" id="radio1" name="radio" value="option1"> Technology Maturity & Risk</label>
                         <br>
                         <label for="radio2"><input type="radio" id="radio2" name="radio" value="option2"> Open Source Risk</label>
                         <br>
@@ -97,9 +98,9 @@
                     <div>
                         <label>How would you identify yourself: </label>
                         <br>
-                        <label for="checkbox1"><input type="checkbox" id="checkbox1" name="checkbox1" value="check1"> Individual</label>
+                        <label for="checkbox1"><input tabindex="0" type="checkbox" id="checkbox1" name="checkbox1" value="check1"> Individual</label>
                         <br>
-                        <label for="checkbox2"><input type="checkbox" id="checkbox2" name="checkbox2" value="check2"> Business</label>
+                        <label for="checkbox2"><input tabindex="0" type="checkbox" id="checkbox2" name="checkbox2" value="check2"> Business</label>
                     </div>
                     <br>
 
@@ -107,7 +108,7 @@
                     <div>
                         <label for="select">How did you get to know about us : </label>
                         <select id="select" name="select">
-                            <option value="option1">Online</option>
+                            <option tabindex="0" value="option1">Online</option>
                             <option value="option2">Referral</option>
                             <option value="option3">LinkedIn</option>
                         </select>
@@ -119,28 +120,28 @@
 
                     <div>
                         <label for="username">Username : </label>
-                        <input type="text" id="username" name="username" placeholder="What should we call you ?" required>
+                        <input tabindex="0" type="text" id="username" name="username" placeholder="What should we call you ?" required>
                     </div>
                     <br>
                     <div>
                         <label for="password">Password : </label>
-                        <input type="password" id="password" name="password" placeholder="Make sure no one's looking" required>
+                        <input tabindex="0" type="password" id="password" name="password" placeholder="Make sure no one's looking" required>
                     </div>
                     <br>
                     <div>
                         <label for="number">Enter your age : </label>
-                        <input type="number" id="number" name="number" min="1" max="100">
+                        <input tabindex="0" type="number" id="number" name="number" min="1" max="100">
                     </div>
                     <br>
                     <div>
                         <label for="tel">Telephone : </label>
-                        <input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+                        <input tabindex="0" type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
                     </div>
                     <br>
                     <div class="country-search">
                         <label for="search">Search your Country:</label>
                         <div class="search-input-container">
-                            <input type="search" id="search" name="search" placeholder="Enter a country name">
+                            <input tabindex="0" type="search" id="search" name="search" placeholder="Enter a country name">
                         </div>
                     </div>
                     <br>
