@@ -51,4 +51,5 @@ aside ~ footer {
 
 ol {
     box-sizing: content-box;
+    border: 6px solid #606;
 }
