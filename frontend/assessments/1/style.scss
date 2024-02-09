@@ -55,3 +55,17 @@
 
     }
 }
+
+@media screen and (max-width: 768px) {
+    #body {
+        padding: 0;
+        #main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+}
