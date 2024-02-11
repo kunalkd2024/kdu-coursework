@@ -1,0 +1,327 @@
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  font-size: 19.2px;
+  background-color: black;
+  color: white;
+}
+
+.main-page {
+  display: grid;
+  grid-template-columns: 5fr 8fr;
+}
+.main-page nav {
+  position: fixed;
+}
+.main-page nav .navigation-section {
+  max-width: 280px;
+  padding: 5px 15px 0 80px;
+  border-right: 1px solid #292d2f;
+}
+.main-page nav .navigation-section .options {
+  display: grid;
+  margin-left: 30px;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(12, 45px);
+  align-items: center;
+  font-size: 1.05rem;
+}
+.main-page nav .navigation-section .options .image {
+  height: 30px;
+  width: 30px;
+}
+.main-page nav .navigation-section .options #twitter_icon {
+  height: 30px;
+  width: 30px;
+}
+.main-page nav .navigation-section .post {
+  background-color: #4696e6;
+  margin: 5px 0 0 17px;
+  border-radius: 59px;
+  width: 240px;
+  height: 45px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.main-page nav .navigation-section .nav-lower {
+  display: grid;
+  grid-template-columns: 50px 142px 1fr;
+  padding: 50px 0 15px 20px;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+.main-page nav .navigation-section .nav-lower .image {
+  height: 48px;
+  width: 50px;
+}
+.main-page nav .navigation-section .nav-lower .names {
+  display: grid;
+  row-gap: 2px;
+  margin-bottom: 5px;
+  font-size: smaller;
+  align-self: center;
+}
+.main-page nav .navigation-section .nav-lower .names #username {
+  font-size: smaller;
+  color: #6d7176;
+}
+.main-page nav .navigation-section .nav-lower #more {
+  justify-self: stretch;
+  align-self: self-start;
+  padding: 10px;
+}
+.main-page main {
+  margin-left: 368px;
+  width: 600px;
+  border-right: 1px solid #292d2f;
+}
+.main-page main .upper-bar {
+  height: 2.75rem;
+  font-size: 0.8rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 5fr 5fr 1.5fr;
+  border-bottom: 1px solid #292d2f;
+}
+.main-page main .upper-bar #following {
+  color: #656a6e;
+}
+.main-page main .upper-bar .image {
+  width: 1.65rem;
+  height: 1.75rem;
+  padding-left: 1rem;
+}
+.main-page main .tweet-box .desktop {
+  border-bottom: 1px solid #292d2f;
+  padding-bottom: 0.25rem;
+}
+.main-page main .tweet-box .desktop .post-input {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+}
+.main-page main .tweet-box .desktop .post-input .image {
+  padding: 0.5rem;
+  padding-right: 0.4rem;
+  height: 2.25rem;
+  width: 2.25rem;
+}
+.main-page main .tweet-box .desktop .post-input input {
+  color: white;
+  background-color: black;
+  align-self: center;
+  border: none;
+  font-size: 1rem;
+}
+.main-page main .tweet-box .desktop .tweet-btn {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1.85rem;
+  padding-bottom: 0.3rem;
+}
+.main-page main .tweet-box .desktop .tweet-btn #options {
+  justify-self: start;
+  align-self: center;
+  padding-left: 3.1rem;
+}
+.main-page main .tweet-box .desktop .tweet-btn #options .image {
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+.main-page main .tweet-box .desktop .tweet-btn #post {
+  display: grid;
+  margin: 0 0.85rem;
+  align-content: center;
+  justify-content: center;
+  font-size: smaller;
+  color: #808080;
+  background-color: #0f4e78;
+  border-radius: 1rem;
+}
+.main-page main .tweet-box .mobile {
+  display: none;
+}
+.main-page main .posts .post {
+  border-bottom: 1px solid #292d2f;
+  padding-bottom: 0.4rem;
+}
+.main-page main .posts .post .post-details {
+  display: grid;
+  grid-template-columns: 10% auto 5%;
+}
+.main-page main .posts .post .post-details .image-user {
+  padding: 0.5rem;
+  padding-right: 0.25rem;
+  height: 2.25rem;
+  width: 2.25rem;
+}
+.main-page main .posts .post .post-details #mid {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+.main-page main .posts .post .post-details #mid .names {
+  align-self: last baseline;
+  padding-bottom: 0.2rem;
+  font-size: smaller;
+}
+.main-page main .posts .post .post-details #mid .names #username, .main-page main .posts .post .post-details #mid .names #time {
+  font-size: smaller;
+  color: #6d7176;
+}
+.main-page main .posts .post .post-details #mid .names #dot {
+  height: 0.15rem;
+  display: inline-block;
+  width: 0.15rem;
+  margin-bottom: 0.15rem;
+  border-radius: 2rem;
+  background-color: #6d7176;
+}
+.main-page main .posts .post .post-details #mid .content {
+  font-size: smaller;
+}
+.main-page main .posts .post .post-details #mid .content span {
+  color: #1d9bf0;
+}
+.main-page main .posts .post .post-details #dots {
+  padding-top: 0.25rem;
+  color: #6d7176;
+}
+.main-page main .posts .post .post-options {
+  padding-top: 0.5rem;
+  display: grid;
+  grid-template-columns: 9% auto 6%;
+}
+.main-page main .posts .post .post-options .icons {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  margin-right: 0.1rem;
+}
+.main-page main .posts .post .post-options .image {
+  align-content: center;
+  margin-left: 0.15rem;
+  width: 1.15rem;
+  height: 1rem;
+}
+.main-page main .posts #post2 .post-image {
+  border-radius: 2rem;
+  width: 24rem;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-page main .posts #post3 .post-gif {
+  border-radius: 3rem;
+  display: block;
+  width: 23rem;
+  height: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 414px) {
+  html {
+    font-size: 0.85rem;
+  }
+  html .main-page {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  html .main-page nav {
+    display: none;
+  }
+  html .main-page main {
+    margin-left: 0;
+    width: auto;
+    border-right: none;
+  }
+  html .main-page main .tweet-box .desktop {
+    display: none;
+  }
+  html .main-page main .tweet-box .mobile {
+    display: grid;
+    border-bottom: 1px solid #292d2f;
+  }
+  html .main-page main .tweet-box .mobile .top {
+    margin: 0.6rem 0.5rem 0.2rem 0.5rem;
+    font-size: 0.9rem;
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    grid-template-rows: 1.9rem;
+    justify-items: center;
+    align-items: center;
+  }
+  html .main-page main .tweet-box .mobile .top .image {
+    height: 0.9rem;
+    width: 0.9rem;
+  }
+  html .main-page main .tweet-box .mobile .top #arrow {
+    justify-self: start;
+    padding-left: 0.4rem;
+    padding-top: 0.1rem;
+  }
+  html .main-page main .tweet-box .mobile .top #drafts {
+    color: #1d9bf0;
+  }
+  html .main-page main .tweet-box .mobile .top #post {
+    justify-self: stretch;
+    align-self: stretch;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    border-radius: 2rem;
+    color: #808080;
+    background-color: #0f4e78;
+    margin: 0 0.5rem;
+  }
+  html .main-page main .tweet-box .mobile .post-input {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+  }
+  html .main-page main .tweet-box .mobile .post-input .image {
+    padding: 0.5rem;
+    padding-right: 0.4rem;
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+  html .main-page main .tweet-box .mobile .post-input input {
+    color: white;
+    background-color: black;
+    align-self: center;
+    border: none;
+    font-size: 1rem;
+  }
+  html .main-page main .tweet-box .mobile .global {
+    display: grid;
+    grid-template-columns: 5% auto;
+    grid-template-rows: 2rem;
+    margin: 2.5rem 0.5rem 0 0.5rem;
+    border-bottom: 1px solid #292d2f;
+    padding-left: 0.6rem;
+  }
+  html .main-page main .tweet-box .mobile .global .image {
+    height: 0.9rem;
+    width: 1rem;
+    padding-top: 0.04rem;
+  }
+  html .main-page main .tweet-box .mobile .global #text {
+    color: #1d9bf0;
+    font-size: 0.9rem;
+    padding-left: 0.13rem;
+  }
+  html .main-page main .tweet-box .mobile .options {
+    justify-self: start;
+    align-self: center;
+    padding: 1rem 0 0.5rem 1rem;
+  }
+  html .main-page main .tweet-box .mobile .options .image {
+    height: 1rem;
+    margin-right: 0.5rem;
+  }
+}/*# sourceMappingURL=style.css.map */
