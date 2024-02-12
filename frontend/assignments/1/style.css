@@ -131,7 +131,7 @@ html {
   height: 1rem;
   margin-right: 0.5rem;
 }
-.main-page main .tweet-box .desktop .tweet-btn #post {
+.main-page main .tweet-box .desktop .tweet-btn #postButton {
   display: grid;
   margin: 0 0.85rem;
   align-content: center;
