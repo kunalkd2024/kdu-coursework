@@ -1,0 +1,74 @@
+html {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-size: 19.2px;
+    background-color: black;
+    color: white;
+    white-space: pre-wrap; 
+    word-wrap: break-word;
+    letter-spacing: 1px;
+}
+
+body {
+    display: grid;
+    margin: 38px 200px;
+    align-content: center;
+    .main {
+        display: grid;
+        grid-template-rows: 485px 57px;
+        #messages {
+            overflow: auto;
+            margin-bottom: 15px;
+            .message {
+                display: grid;
+                grid-template-rows: 1fr;
+                grid-template-columns: 60px 900px;
+                span {
+                    padding-top: 2px;
+                    justify-content: center;
+                    align-self: center;
+                }
+            }
+        }
+        #outside {
+            display: grid;
+            grid-template-rows: 40px;
+            padding: 9px;
+            background-color:rgb(130, 129, 129);
+            #input {
+                display: grid;
+                grid-template-columns: auto 6%;
+                column-gap: 10px;
+                #sendMessage {
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    cursor: pointer;
+                    padding: 0;
+                    img {
+                        border: 0;
+                        width: 45px;
+                        height: 35px;
+                    }
+                }
+                input:focus {
+                    outline: none; 
+                }
+            }
+        }
+    }
+}
+
+.circle {
+    height: 35px; 
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px; 
+}

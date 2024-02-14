@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Socket Implementaion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>KDU Chat app</h1>
+    <div class="main">
+        <div id="messages"></div>
+        <div id="outside">
+            <div id="input">
+                <input type="text" id="msgInput" placeholder="Enter your message...">
+                <button id="sendMessage"><img src="mail-send.png" alt="send_button"></button>
+            </div>
+        </div>
+    </div>
+    
+    <script <script src="https://cdn.socket.io/4.7.4/socket.io.min.js" 
+    integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4" 
+    crossorigin="anonymous"></script>
+    <script>
+        const messageInput = document.getElementById("msgInput");
+        const sendButton = document.getElementById("sendMessage");
+        const messageOutput = document.getElementById("messages");
+        const socket = io("http://localhost:3000")
+        
+        function createCircle(letter, color) {
+            const circle = document.createElement('div');
+            circle.classList.add('circle');
+            circle.textContent = letter;
+            circle.style.backgroundColor = color;
+            return circle;
+        }
+
+        function addMessage(from, message){
+            const element = document.createElement('div');
+            element.classList.add('message');
+
+            const textElement = document.createElement('span');
+            textElement.textContent = message;
+
+            if (from === 'You' || from === 'User') {
+                const circleLetter = (from === 'You') ? 'Y' : 'U';
+                const circleColor = (from === 'You') ? '#007bff' : 'green';
+                element.appendChild(createCircle(circleLetter, circleColor));
+            } else {
+                textElement.textContent = from + ": " + message;
+            }
+
+            element.appendChild(textElement);
+
+            messageOutput.appendChild(element);
+        }
+
+        
+
+        sendButton.addEventListener("click", () => {
+            const message = messageInput.value;
+
+            socket.emit('message', message);
+            addMessage("You", message);
+
+            messageInput.value = '';
+
+        })
+        
+        socket.on('new-message', (message) => {
+            addMessage("User", message);
+        })
+
+    </script>
+</body>
+</html>
