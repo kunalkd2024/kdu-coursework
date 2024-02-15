@@ -28,10 +28,22 @@ class RecipeSearch {
     }
 
     async searchRecipes(query: string): Promise<void> {
-        const matchedRecipes = this.recipes.filter(recipe =>
-            recipe.name.toLowerCase().includes(query.toLowerCase())
-        );
-        console.log('Matched Recipes:', matchedRecipes);
+        const url = `https://dummyjson.com/recipes/search?q=${encodeURIComponent(query)}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        const matchedRecipes: recipe[] = data.recipes;
+        console.log('Matched Recipes:');
+        matchedRecipes.forEach(recipe => {
+            console.log('\nThe following are the details');
+            console.log('Image:', recipe.image);
+            console.log('Name:', recipe.name);
+            console.log('Rating:', recipe.rating);
+            console.log('Cuisine:', recipe.cuisine);
+            console.log('Ingredients:', recipe.ingredients);
+            console.log('Difficulty:', recipe.difficulty);
+            console.log('Time taken:', recipe.prepTimeMinutes + recipe.cookTimeMinutes);
+            console.log('Calorie Count:', recipe.caloriesPerServing);
+        })
     }
 
     printAllRecipes(): void {
@@ -59,8 +71,8 @@ const curr = new RecipeSearch();
 
 curr.fetchRecipesFromAPI()
     .then(() => {
-        curr.printAllRecipes();
-        curr.searchRecipes("caprese");
+        // curr.printAllRecipes();
+        curr.searchRecipes("salad");
     })
     .catch(error => {
         console.error('Error:', error);

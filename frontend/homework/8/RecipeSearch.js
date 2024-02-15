@@ -65,13 +65,32 @@ var RecipeSearch = /** @class */ (function () {
     };
     RecipeSearch.prototype.searchRecipes = function (query) {
         return __awaiter(this, void 0, void 0, function () {
-            var matchedRecipes;
+            var url, response, data, matchedRecipes;
             return __generator(this, function (_a) {
-                matchedRecipes = this.recipes.filter(function (recipe) {
-                    return recipe.name.toLowerCase().includes(query.toLowerCase());
-                });
-                console.log('Matched Recipes:', matchedRecipes);
-                return [2 /*return*/];
+                switch (_a.label) {
+                    case 0:
+                        url = "https://dummyjson.com/recipes/search?q=".concat(encodeURIComponent(query));
+                        return [4 /*yield*/, fetch(url)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.json()];
+                    case 2:
+                        data = _a.sent();
+                        matchedRecipes = data.recipes;
+                        console.log('Matched Recipes:');
+                        matchedRecipes.forEach(function (recipe) {
+                            console.log('\nThe following are the details');
+                            console.log('Image:', recipe.image);
+                            console.log('Name:', recipe.name);
+                            console.log('Rating:', recipe.rating);
+                            console.log('Cuisine:', recipe.cuisine);
+                            console.log('Ingredients:', recipe.ingredients);
+                            console.log('Difficulty:', recipe.difficulty);
+                            console.log('Time taken:', recipe.prepTimeMinutes + recipe.cookTimeMinutes);
+                            console.log('Calorie Count:', recipe.caloriesPerServing);
+                        });
+                        return [2 /*return*/];
+                }
             });
         });
     };
@@ -98,8 +117,8 @@ var RecipeSearch = /** @class */ (function () {
 var curr = new RecipeSearch();
 curr.fetchRecipesFromAPI()
     .then(function () {
-    curr.printAllRecipes();
-    curr.searchRecipes("caprese");
+    // curr.printAllRecipes();
+    curr.searchRecipes("salad");
 })
     .catch(function (error) {
     console.error('Error:', error);
