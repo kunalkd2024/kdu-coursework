@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDU Stock Market</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>KDU Stock Market Dashboard</h1>
+    </header>
+    <main>
+        <section id="left">
+            <div id="info">
+                <div id="company">
+                    <img src="zomato.jpg" alt="zomato_icon">
+                    <span>Zomato</span>
+                </div>
+                <div id="details">
+                    <span id="text">Price</span>
+                    <span id="price"> 87</span>
+                    <span id="perc"></span>
+                </div>
+                <div id="qty"><input type="text" id="qtyInput" placeholder="Enter QTY"></div>
+                <div id="buy">Buy</div>
+                <div id="sell">Sell</div>
+            </div>
+            <div id="graph">
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+            </div>
+            <div id="scale">
+                <span>0</span>
+                <span>100</span>
+                <span>200</span>
+                <span>300</span>
+                <span>400</span>
+                <span>500</span>
+                <span>600</span>
+            </div>
+        </section>
+        <section id="history">
+            <span>History</span>
+        </section>
+    </main>
+    
+    <script <script src="https://cdn.socket.io/4.7.4/socket.io.min.js" 
+    integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4" 
+    crossorigin="anonymous"></script>
+    <script>
+        const buyButton = document.getElementById('buy');
+        const sellButton = document.getElementById('sell');
+        const currPrice = document.getElementById('price');
+        const quantity = document.getElementById('qtyInput');
+        const transactions = document.getElementById('history');
+
+        const socket = io("http://localhost:3000")
+
+        function addTransaction(transaction, price, quantity){
+            const element = document.createElement('div');
+            element.classList.add('trscn');
+            element.style.border = "1px solid #000";
+            element.style.margin = "8px";
+            const left = document.createElement('div');
+            const stocks = document.createElement('div');
+            stocks.textContent = quantity + ' stocks at Rs.' + price;
+            const date = document.createElement('div');
+            date.style.fontSize = 'x-small';
+            date.textContent = 'Fri, 02 Feb 1996 21:04:05 GMT';
+            left.appendChild(stocks);
+            left.appendChild(date);
+            const right = document.createElement('div');
+            const trans = document.createElement('div');
+            if(transaction === "Buy") trans.style.color = "#2f9e44";
+            else trans.style.color = "#e03131";
+            trans.textContent = transaction;
+            right.appendChild(trans);
+
+            element.appendChild(left);
+            element.appendChild(right);
+
+            transactions.appendChild(element);
+        }
+
+        buyButton.addEventListener("click", () => {
+            const price = currPrice.innerText;
+            const qty = quantity.value;
+
+            addTransaction("Buy", price, qty);
+
+            quantity.value = '';
+
+        })
+        
+        sellButton.addEventListener("click", () => {
+            const price = currPrice.innerText;
+            const qty = quantity.value;
+
+            addTransaction("Sell", price, qty);
+
+            quantity.value = '';
+
+        })
+
+    </script>
+</body>
+</html>
