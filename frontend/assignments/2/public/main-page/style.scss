@@ -158,8 +158,9 @@ html {
                     }
                     #mid {
                         display: grid;
-                        grid-template-rows: repeat(2, 1fr);
+                        grid-template-rows: auto auto;
                         .names {
+                            padding-top: 0.5rem;
                             align-self: last baseline;
                             padding-bottom: 0.2rem;
                             font-size: smaller;
@@ -230,6 +231,42 @@ html {
         }
     }
 }
+
+#mid-new {
+    display: grid;
+    grid-template-rows: auto auto;
+    .names {
+        padding-top: 0.5rem;
+        align-self: last baseline;
+        padding-bottom: 0.2rem;
+        font-size: smaller;
+        #username, #time {
+            font-size: smaller;
+            color: #6d7176;
+        }
+        #dot {
+            height: 0.15rem;
+            display: inline-block;
+            width: 0.15rem;
+            margin-bottom: 0.15rem;
+            border-radius: 2rem;
+            background-color: #6d7176;
+        }
+    }
+    .content {
+        font-size: smaller;
+        img {
+            padding-top: 0.5rem;
+            border-radius: 2rem;
+            width: 24rem;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
 
 @media screen and (max-width: 414px){
     html {

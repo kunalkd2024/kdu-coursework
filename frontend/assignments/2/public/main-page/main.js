@@ -103,11 +103,13 @@ messagePageImage.addEventListener('click', () => {
     window.location.href = '/twitter2/public/chat/chat.html';
 });
 
-const fetchPosts = async (page = 1, pageSize = 5) => {
+const fetchPosts = async (page , pageSize = 5) => {
     try {
-        const response = await fetch(`/api/posts?page=${page}&pageSize=${pageSize}`);
+        const response = await fetch(`http://localhost:3000/api/posts?page=${page}&pageSize=${pageSize}`);
         if (response.ok) {
         const data = await response.json();
+        console.log(data);
+       
         return data;
         } else {
         throw new Error('Failed to fetch posts');
@@ -116,26 +118,30 @@ const fetchPosts = async (page = 1, pageSize = 5) => {
         console.error(error);
         throw error;
     }
+    
 };
-  
+  var page=1;
 const renderPosts = async () => {
 try {
-    const posts = await fetchPosts();
+    const posts = await fetchPosts(page);
+    page = (page%2) + 1;
     const postsContainer = document.querySelector('.posts');
     posts.forEach(post => {
     const postElement = document.createElement('div');
     postElement.classList.add('post');
     postElement.id = post.id;
+    const now = new Date();
+    const seconds = now.getSeconds();
     postElement.innerHTML = `
         <div class="post-details">
         <div>
             <img class="image-user" src="../../data/icons/n_icon.png" alt="n_icon">
         </div>
-        <div id="mid">
+        <div id="mid-new">
             <div class="names">
             <strong>${post.name}</strong> <span id="username">${post.username}</span> 
             <span id="dot"></span> 
-            <span id="time">${post.time}</span>
+            <span id="time">${seconds}s</span>
             </div>
             <div class="content">
             ${post.content}

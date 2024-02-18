@@ -160,9 +160,10 @@ html {
 }
 .main-page main .posts .post .post-details #mid {
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: auto auto;
 }
 .main-page main .posts .post .post-details #mid .names {
+  padding-top: 0.5rem;
   align-self: last baseline;
   padding-bottom: 0.2rem;
   font-size: smaller;
@@ -219,6 +220,41 @@ html {
   display: block;
   width: 23rem;
   height: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#mid-new {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+#mid-new .names {
+  padding-top: 0.5rem;
+  align-self: last baseline;
+  padding-bottom: 0.2rem;
+  font-size: smaller;
+}
+#mid-new .names #username, #mid-new .names #time {
+  font-size: smaller;
+  color: #6d7176;
+}
+#mid-new .names #dot {
+  height: 0.15rem;
+  display: inline-block;
+  width: 0.15rem;
+  margin-bottom: 0.15rem;
+  border-radius: 2rem;
+  background-color: #6d7176;
+}
+#mid-new .content {
+  font-size: smaller;
+}
+#mid-new .content img {
+  padding-top: 0.5rem;
+  border-radius: 2rem;
+  width: 24rem;
+  height: auto;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }

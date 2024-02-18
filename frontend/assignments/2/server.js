@@ -28,7 +28,7 @@ const activeUsers = {};
 
 io.on('connection', (socket) => {
     console.log('A user connected');
-
+    console.log(socket);
     socket.on('message', (data) => {
         console.log(data.message); 
     });
