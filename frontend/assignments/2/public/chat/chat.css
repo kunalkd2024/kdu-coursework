@@ -1,0 +1,182 @@
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+}
+
+.chat-page {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+.chat-page nav .navigation-section {
+  max-width: 14rem;
+  padding: 0.25rem 0.75rem 0 1.5rem;
+  border-right: 1px solid #292d2f;
+}
+.chat-page nav .navigation-section .options {
+  display: grid;
+  margin-left: 1.5rem;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(12, 2.25rem);
+  justify-items: start;
+  align-items: center;
+  font-size: 1.05rem;
+}
+.chat-page nav .navigation-section .options .image {
+  padding-top: 0.2rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.chat-page nav .navigation-section .options #twitter_icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.chat-page nav .navigation-section .post {
+  background-color: #4696e6;
+  margin: 0.25rem 0 0 0.85rem;
+  border-radius: 3rem;
+  width: 12rem;
+  height: 2.25rem;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.chat-page nav .navigation-section .nav-lower {
+  display: grid;
+  grid-template-columns: 2.5rem 7.1rem 1fr;
+  padding: 2.5rem 0 0.75rem 1rem;
+  -moz-column-gap: 0.6rem;
+       column-gap: 0.6rem;
+}
+.chat-page nav .navigation-section .nav-lower .image {
+  height: 2.4rem;
+  width: 2.5rem;
+}
+.chat-page nav .navigation-section .nav-lower .names {
+  display: grid;
+  row-gap: 0.1rem;
+  margin-bottom: 0.25rem;
+  font-size: smaller;
+  align-self: center;
+}
+.chat-page nav .navigation-section .nav-lower .names #username {
+  font-size: smaller;
+  color: #6d7176;
+}
+.chat-page nav .navigation-section .nav-lower #more {
+  justify-self: stretch;
+  align-self: self-start;
+  padding: 0.5rem;
+}
+.chat-page main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.chat-page main #left {
+  border-right: 1px solid #292d2f;
+}
+.chat-page main #left #heading {
+  margin: 0;
+  padding: 0.41rem 1rem;
+}
+.chat-page main #left #users {
+  display: grid;
+  background-color: #191e23;
+  padding: 0.5rem 1rem;
+  justify-items: left;
+  align-items: center;
+  font-size: smaller;
+  grid-template-columns: 2.5rem 6.7rem auto;
+}
+.chat-page main #left #users img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 4rem;
+}
+.chat-page main #left #users #username {
+  color: #6d7176;
+}
+.chat-page main #right {
+  margin-right: 0.5rem;
+  border-right: 1px solid #292d2f;
+}
+.chat-page main #right #user {
+  margin: 0;
+  padding: 0.5rem;
+  border-bottom: 1px solid #6d7176;
+}
+.chat-page main #right #chat {
+  height: 82.8%;
+  padding: 0.75rem 1rem;
+  justify-self: end;
+}
+.chat-page main #right #chat .you {
+  text-align: right;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.chat-page main #right #chat .you-message {
+  font-size: smaller;
+  padding: 0.5rem 0.8rem;
+  display: inline-block;
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #008ceb;
+  border-radius: 2rem 2rem 0.1rem 2rem;
+}
+.chat-page main #right #chat .time {
+  color: #6d7176;
+  font-size: small;
+  padding-top: 0.2rem;
+  display: block;
+}
+.chat-page main #right #chat .user {
+  text-align: left;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.chat-page main #right #chat .user-message {
+  font-size: smaller;
+  padding: 0.5rem 0.8rem;
+  display: inline-block;
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #282d2d;
+  border-radius: 2rem 2rem 2rem 0.1rem;
+}
+.chat-page main #right #container {
+  display: grid;
+  height: 7%;
+  border-top: 1px solid #292d2f;
+}
+.chat-page main #right #container #input-div {
+  display: grid;
+  grid-template-columns: auto 7%;
+  align-items: center;
+  background-color: #191e23;
+  border-radius: 1rem;
+  margin: 0.3rem 0.65rem;
+}
+.chat-page main #right #container #input-div #msgInput {
+  margin-left: 0.75rem;
+  background-color: #191e23;
+  border: none;
+  color: white;
+}
+.chat-page main #right #container #input-div #msgInput:focus {
+  outline: none;
+}
+.chat-page main #right #container #input-div img {
+  height: 1rem;
+  width: 1rem;
+}/*# sourceMappingURL=chat.css.map */
