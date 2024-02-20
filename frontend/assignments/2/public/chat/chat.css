@@ -92,7 +92,6 @@ html {
   justify-items: left;
   align-items: center;
   font-size: smaller;
-  grid-template-columns: 2.5rem 6.7rem auto;
 }
 .chat-page main #left #users img {
   width: 2rem;
@@ -179,4 +178,13 @@ html {
 .chat-page main #right #container #input-div img {
   height: 1rem;
   width: 1rem;
+}
+
+.activeUsers {
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  -moz-column-gap: 5%;
+       column-gap: 5%;
+  align-items: center;
 }/*# sourceMappingURL=chat.css.map */

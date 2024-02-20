@@ -1,5 +1,3 @@
-const socket = io("http://localhost:3000");
-
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const username = document.getElementById('username').value;
@@ -16,8 +14,6 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         
         if (response.ok) {
             const data = await response.json();
-            socket.emit('login', data.user);
-            socket.emit('refertoMainpage', { message: 'Referenced to main page', });
             window.location.href = data.redirect_url;
         } else {
             const data = await response.json();
