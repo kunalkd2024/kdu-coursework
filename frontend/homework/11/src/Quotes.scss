@@ -1,0 +1,32 @@
+.quote {
+  background-color: #0d369e;
+  margin-top: 30px;
+  color: white;
+  padding: 15px 30px 40px 30px;
+  border-radius: 20px;
+  h2 {
+    letter-spacing: 1px;
+    padding: 20px 30px;
+    margin: 0;
+    display: grid;
+    justify-content: center;
+  }
+  .details {
+    display: flex;
+    justify-content: flex-end;
+  }
+  #date {
+    color: rgba(211, 211, 211, 0.67);
+  }
+  .tags {
+    padding-top: 30px;
+    span {
+      background-color: #ef99c3;
+      font-weight: bolder;
+      color: black;
+      padding: 10px 20px;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+  }
+}
