@@ -1,0 +1,99 @@
+#header {
+  display: grid;
+  padding: 0.6% 7%;
+  width: 86%;
+  grid-template-columns: 3.5fr repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  background-color: #2a2a72;
+  align-items: center;
+  color: white;
+  justify-items: self-end;
+  #search {
+    justify-self: start;
+    display: flex;
+    input:focus {
+      outline: none;
+    }
+    #magnifier {
+      justify-self: center;
+      align-self: center;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      width: 19.5px;
+      height: 19.5px;
+      background-color: #eeefef;
+    }
+    #search-icon {
+      height: 12px;
+      width: 12px;
+    }
+  }
+}
+
+#main-section {
+  background-color: #f3f3f3;
+  min-height: 92%;
+  height: fit-content;
+  padding: 0.6% 7%;
+  #heading {
+    font-weight: 500;
+    font-size: 45px;
+    margin: 0;
+    padding: 80px 0 60px 0;
+    display: grid;
+    text-align: center;
+    color: #282571;
+  }
+  #mid-sec {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 20px;
+    #left {
+      padding-left: 12%;
+      .productImage {
+        width: 320px;
+        height: 380px;
+      }
+    }
+    #right {
+      #product {
+        font-size: 30px;
+      }
+      #category {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #6c737a;
+        padding: 10px 0 5px 0;
+      }
+      #price {
+        color: #29286f;
+        font-weight: 1000;
+        padding-bottom: 10px;
+      }
+      #description-heading {
+        font-size: smaller;
+        font-weight: 1000;
+        padding-top: 5px;
+      }
+      #description-content {
+        color: #6c737a;
+        line-height: 30px;
+        padding-bottom: 15px;
+      }
+      #link {
+        display: block;
+        width: fit-content;
+        padding: 7px;
+        border: 1px solid #0c9ef4;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        #content {
+          color: #0c9ef4;
+          text-decoration: none;
+          font-weight: 1000;
+        }
+      }
+    }
+  }
+}
