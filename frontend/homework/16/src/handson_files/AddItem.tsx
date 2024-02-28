@@ -23,12 +23,12 @@ const AddItem: React.FC = () => {
   };
 
   return (
-    <div id="containerAddItem">
-      <h2>Add Items</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={newItemName} onChange={handleInputChange} />
-        <button type="submit">Submit</button>
-        <button type="button" onClick={() => dispatch(clearCompleted())}>Clear completed</button>
+    <div data-testid="containerAddItemTest" id="containerAddItem">
+      <h2 data-testid="addItemHeadingTest" id="addItemHeading">Add Items</h2>
+      <form onSubmit={handleSubmit} id="addItemForm">
+        <input type="text" value={newItemName} onChange={handleInputChange} data-testid="addItemInputTest" id="addItemInput"/>
+        <button type="submit" data-testid="addItemSubmitButtonTest" id="addItemSubmitButton">Submit</button>
+        <button type="button" onClick={() => dispatch(clearCompleted())} data-testid="clearCompletedButtonTest" id="clearCompletedButton">Clear completed</button>
       </form>
     </div>
   );

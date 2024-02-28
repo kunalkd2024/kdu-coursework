@@ -19,7 +19,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["@testing-library/jest-dom", "vitest/globals", "jest"]
+    "types": ["@testing-library/jest-dom", "vitest/globals", "@testing-library/cypress"],
   },
   "exclude": ["cypress.config.ts"],
   "files": ["cypress.config.ts"],

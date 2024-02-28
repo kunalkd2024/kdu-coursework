@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <div className="containerHeader">
+    <div className="containerHeader" id="headerContainer">
       <div>
         <h1 id="heading">Item Lister</h1>
       </div>
@@ -19,6 +19,8 @@ export const Header: React.FC = () => {
           type="text"
           placeholder="Search Items..."
           onChange={(e) => handleSearch(e.target.value)}
+          id="searchInput"
+          data-testid="searchInputTest"
         />
       </div>
     </div>
