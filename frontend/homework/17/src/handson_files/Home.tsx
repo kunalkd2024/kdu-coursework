@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ProductAPI } from "../types/types";
 import searchIcon from "../types/search.png";
@@ -7,9 +7,10 @@ import "./Home.scss";
 import CircularProgress from "@mui/material/CircularProgress";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
-import { AppDispatch } from "../redux/Store";
+import { AppDispatch, RootState } from "../redux/Store";
 import { useProductsContext } from "../contexts/ProductsContext";
 import { useCategoryContext } from "../contexts/CategoryContext";
+import { setShow } from "../redux/SnackbarSlice";
 
 export function Home() {
   const { allProducts, loading, error, setError } = useProductsContext();
@@ -20,8 +21,11 @@ export function Home() {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const dispatch: AppDispatch = useDispatch();
 
+  const show = useSelector((state: RootState) => state.snackbar.show);
+
   const handleCloseSnackbar = () => {
     setError(null);
+    dispatch(setShow(false));
   };
 
   useEffect(() => {
@@ -47,8 +51,7 @@ export function Home() {
 
   useEffect(() => {
     const handleSearch = () => {
-      const searchQuery =
-        searchInputRef.current?.value.toLowerCase() ?? "";
+      const searchQuery = searchInputRef.current?.value.toLowerCase() ?? "";
       setSearchTerm(searchQuery);
     };
 
@@ -62,9 +65,7 @@ export function Home() {
     }
   }, []);
 
-  const handleSortChange = (
-    e: React.ChangeEvent<HTMLSelectElement>
-  ) => {
+  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSortOrder(e.target.value as "ASC" | "DESC");
   };
 
@@ -93,10 +94,7 @@ export function Home() {
         <div>
           Filter : &nbsp;
           {Array.isArray(allProducts) && allProducts.length > 0 && (
-            <select
-              value={selectedCategory}
-              onChange={handleCategoryChange}
-            >
+            <select value={selectedCategory} onChange={handleCategoryChange}>
               <option value="All">Brand</option>
               {[...new Set(allProducts.map((product) => product.category))].map(
                 (category) => (
@@ -128,21 +126,6 @@ export function Home() {
         <div style={loaderStyle}>
           <CircularProgress />
         </div>
-      ) : error ? (
-        <Snackbar
-          open={true}
-          autoHideDuration={6000}
-          onClose={handleCloseSnackbar}
-        >
-          <MuiAlert
-            elevation={6}
-            variant="filled"
-            severity="error"
-            onClose={handleCloseSnackbar}
-          >
-            {error}
-          </MuiAlert>
-        </Snackbar>
       ) : (
         <div id="products">
           {selectedProducts
@@ -175,6 +158,40 @@ export function Home() {
               );
             })}
         </div>
+      )}
+      {!loading && error && show && (
+        <Snackbar
+          open={true}
+          autoHideDuration={6000}
+          onClose={handleCloseSnackbar}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        >
+          <MuiAlert
+            elevation={6}
+            variant="filled"
+            severity="error"
+            onClose={handleCloseSnackbar}
+          >
+            {error}
+          </MuiAlert>
+        </Snackbar>
+      )}
+      {!loading && !error && show && (
+        <Snackbar
+          open={true}
+          autoHideDuration={6000}
+          onClose={handleCloseSnackbar}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        >
+          <MuiAlert
+            elevation={6}
+            variant="filled"
+            severity="success"
+            onClose={handleCloseSnackbar}
+          >
+            Data loaded successfully!
+          </MuiAlert>
+        </Snackbar>
       )}
     </div>
   );

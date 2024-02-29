@@ -9,7 +9,8 @@ export const getProducts = createAsyncThunk<ProductAPI[]>(
       const data = await response.json();
       return data;
     } catch {
-      return "Error while making API call.";
+      console.log("Error while making API call.");
+      throw "Error while making API call.";
     }
   }
 );
