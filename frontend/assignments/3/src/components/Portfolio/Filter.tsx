@@ -16,6 +16,15 @@ interface FilterProps {
   onFilterChange: (filteredTransactions: PortfolioTransactionAPI[]) => void;
 }
 
+/**
+ * React component representing a filter for transactions.
+ *
+ * @component Filter
+ * @param {object} props - The properties of the component.
+ * @param {PortfolioTransactionAPI[]} props.transactions - The list of transactions to be filtered.
+ * @param {(filteredTransactions: PortfolioTransactionAPI[]) => void} props.onFilterChange - The function to be called when the transactions are filtered.
+ * @returns {JSX.Element} A React element representing the filter component.
+ */
 const Filter: React.FC<FilterProps> = ({ transactions, onFilterChange }) => {
   const classes = useStyles();
   const [searchTerm, setSearchTerm] = useState("");

@@ -1,5 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
+/**
+ * Asynchronous thunk function to fetch stocks data.
+ *
+ * @function fetchStocks
+ * @returns {Promise<Array>} A promise that resolves with an array of stock data.
+ * @throws {Error} If fetching stock data fails.
+ */
 export const fetchStocks = createAsyncThunk("fetchStocks", async () => {
   try {
     const response = await fetch(

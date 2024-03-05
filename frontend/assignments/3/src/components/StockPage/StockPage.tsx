@@ -12,6 +12,12 @@ import SnackbarComponent from "./Snackbar";
 import StockDropdown from "./StockDropdown";
 import { fetchStocks } from "../../thunks/getStocks";
 
+/**
+ * React component representing the stock page.
+ *
+ * @component StockPage
+ * @returns {JSX.Element} A React element representing the stock page component.
+ */
 export function StockPage() {
   const { stockSymbol } = useParams();
   const dispatch: AppDispatch = useDispatch();
@@ -45,7 +51,7 @@ export function StockPage() {
       change = change / prevPrice!;
       change = change * 100;
       setPercentageChange(change ? change : 0);
-    }, 10000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [basePrice, price, prevPrice]);

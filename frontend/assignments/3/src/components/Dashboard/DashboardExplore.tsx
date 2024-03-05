@@ -24,6 +24,12 @@ import {
 import { StocksAPI } from "../../types/stocksTypes";
 import { TableFooter } from "@mui/material";
 
+/**
+ * React component representing the explore dashboard page.
+ *
+ * @component DashboardExplore
+ * @returns {JSX.Element} A React element representing the explore dashboard page.
+ */
 export function DashboardExplore() {
   const dispatch: AppDispatch = useDispatch();
   const { stocks, favorites, loading } = useSelector(
@@ -173,7 +179,7 @@ export function DashboardExplore() {
                         <TableCell
                           sx={{ textAlign: "center", fontSize: "1.1rem" }}
                         >
-                          {stock.base_price}
+                          &#8377;{stock.base_price}
                         </TableCell>
                         <TableCell
                           sx={{

@@ -27,6 +27,16 @@ const initialState: UserState = {
   owned: [],
 };
 
+/**
+ * Redux slice for managing user data.
+ *
+ * @constant userSlice
+ * @property {string} name - The name of the slice.
+ * @property {UserState} initialState - The initial state of the slice.
+ * @property {Object} reducers - Reducers to handle actions.
+ * @property {Function} reducers.buyStock - Reducer to handle buying a stock.
+ * @property {Function} reducers.sellStock - Reducer to handle selling a stock.
+ */
 const userSlice = createSlice({
   name: "userData",
   initialState,

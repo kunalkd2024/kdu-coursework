@@ -13,6 +13,15 @@ const initialState: portfolioState = {
   loading: "pending",
 };
 
+/**
+ * Redux slice for managing portfolio data.
+ *
+ * @constant PortfolioSlice
+ * @property {string} name - The name of the slice.
+ * @property {portfolioState} initialState - The initial state of the slice.
+ * @property {Function} reducers - Reducers to handle actions (none defined in this slice).
+ * @property {Function} extraReducers - Additional reducers to handle actions dispatched by other slices or thunks.
+ */
 const PortfolioSlice = createSlice({
   name: "PortfolioData",
   initialState,

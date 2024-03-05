@@ -1,5 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
+/**
+ * Asynchronous thunk function to fetch portfolio transactions.
+ *
+ * @function fetchPortfolioTransactions
+ * @returns {Promise<Array>} A promise that resolves with an array of portfolio transactions.
+ * @throws {Error} If fetching portfolio transactions fails.
+ */
 export const fetchPortfolioTransactions = createAsyncThunk(
   "fetchPortfolioTransactions",
   async () => {

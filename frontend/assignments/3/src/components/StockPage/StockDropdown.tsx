@@ -8,6 +8,15 @@ interface StockDropdownProps {
   currentStock: StocksAPI | undefined;
 }
 
+/**
+ * React component representing a dropdown menu for selecting stocks.
+ *
+ * @component StockDropdown
+ * @param {object} props - The props of the component.
+ * @param {StocksAPI[]} props.stocks - An array of stocks.
+ * @param {StocksAPI | undefined} props.currentStock - The currently selected stock.
+ * @returns {JSX.Element} A React element representing the stock dropdown component.
+ */
 const StockDropdown: React.FC<StockDropdownProps> = ({
   stocks,
   currentStock,

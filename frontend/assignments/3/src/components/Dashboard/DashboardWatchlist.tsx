@@ -18,6 +18,12 @@ import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOu
 import Pagination from "@mui/material/Pagination";
 import { TableFooter } from "@mui/material";
 
+/**
+ * React component representing the watchlist dashboard page.
+ *
+ * @component DashboardWatchlist
+ * @returns {JSX.Element} A React element representing the watchlist dashboard page.
+ */
 export function DashboardWatchlist() {
   const dispatch: AppDispatch = useDispatch();
   const { favorites } = useSelector((state: RootState) => state.stocksData);
@@ -137,7 +143,7 @@ export function DashboardWatchlist() {
                     </Link>
                   </TableCell>
                   <TableCell sx={{ textAlign: "center", fontSize: "1.1rem" }}>
-                    {stock.base_price}
+                  &#8377;{stock.base_price}
                   </TableCell>
                   <TableCell
                     sx={{

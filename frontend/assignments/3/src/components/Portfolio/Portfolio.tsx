@@ -7,6 +7,12 @@ import { CircularProgress, Button } from "@mui/material";
 import { createUseStyles } from "react-jss";
 import Filter from "./Filter";
 
+/**
+ * React component representing the portfolio page.
+ *
+ * @component Portfolio
+ * @returns {JSX.Element} A React element representing the portfolio page.
+ */
 export function Portfolio() {
   const dispatch: AppDispatch = useDispatch();
   const { transactions: allTransactions, loading } = useSelector(

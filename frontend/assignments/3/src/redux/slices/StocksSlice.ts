@@ -15,6 +15,17 @@ const initialState: stocksState = {
   loading: "pending",
 };
 
+/**
+ * Redux slice for managing stocks data.
+ *
+ * @constant StocksSlice
+ * @property {string} name - The name of the slice.
+ * @property {stocksState} initialState - The initial state of the slice.
+ * @property {Object} reducers - Reducers to handle actions.
+ * @property {Function} reducers.addToWatchlist - Reducer to add a stock to the watchlist.
+ * @property {Function} reducers.deleteFromWatchlist - Reducer to delete a stock from the watchlist.
+ * @property {Function} extraReducers - Additional reducers to handle actions dispatched by other slices or thunks.
+ */
 const StocksSlice = createSlice({
   name: "stockData",
   initialState,

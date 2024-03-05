@@ -1,5 +1,11 @@
 import { useEffect } from "react";
 
+/**
+ * React component for displaying a page not found message and redirecting to the main page.
+ *
+ * @component PageNotFound
+ * @returns {JSX.Element} A React element representing the page not found component.
+ */
 const PageNotFound = () => {
   useEffect(() => {
     const redirectTimer = setTimeout(() => {

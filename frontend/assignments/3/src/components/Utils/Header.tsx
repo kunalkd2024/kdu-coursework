@@ -2,6 +2,12 @@ import { createUseStyles } from "react-jss";
 import { Link } from "react-router-dom";
 import dashboardStocksIcon from "../../icons/dashboardStocksIcon.png";
 
+/**
+ * React component representing the header of the application.
+ *
+ * @component Header
+ * @returns {JSX.Element} A React element representing the header component.
+ */
 export function Header() {
   const classes = useStyles();
 

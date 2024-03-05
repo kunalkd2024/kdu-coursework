@@ -8,6 +8,16 @@ interface SnackbarComponentProps {
   onClose: () => void;
 }
 
+/**
+ * React component representing a snackbar component.
+ *
+ * @component SnackbarComponent
+ * @param {object} props - The properties of the component.
+ * @param {boolean} props.open - Determines if the snackbar is open or not.
+ * @param {string} props.message - The message to be displayed in the snackbar.
+ * @param {Function} props.onClose - The function to be called when the snackbar is closed.
+ * @returns {JSX.Element} A React element representing the snackbar component.
+ */
 const SnackbarComponent: React.FC<SnackbarComponentProps> = ({
   open,
   message,

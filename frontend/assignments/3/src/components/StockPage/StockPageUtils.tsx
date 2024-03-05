@@ -1,3 +1,12 @@
+/**
+ * Adds a new bar to the graph based on the provided parameters.
+ *
+ * @function addBarToGraph
+ * @param {number | undefined} newPrice - The new price to be represented by the bar.
+ * @param {boolean} isPositive - Indicates whether the price change is positive or negative.
+ * @param {number | undefined} basePrice - The base price for comparison.
+ * @returns {void}
+ */
 export const addBarToGraph = (
   newPrice: number | undefined,
   isPositive: boolean,
@@ -16,6 +25,15 @@ export const addBarToGraph = (
   }
 };
 
+/**
+ * Adds a new transaction to the history section based on the provided parameters.
+ *
+ * @function addToHistory
+ * @param {number} quantity - The quantity of stocks involved in the transaction.
+ * @param {string} type - The type of transaction (e.g., "BUY", "SELL").
+ * @param {React.RefObject<HTMLDivElement>} historySectionRef - Reference to the history section container.
+ * @returns {void}
+ */
 export const addToHistory = (
   quantity: number,
   type: string,
@@ -58,6 +76,7 @@ export const addToHistory = (
 
       historySection.appendChild(transactionContainer);
 
+      // Scroll to the newly added transaction container
       transactionContainer.scrollIntoView({
         behavior: "smooth",
         block: "end",
