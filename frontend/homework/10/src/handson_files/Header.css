@@ -1,0 +1,19 @@
+#containerHeader {
+  background-color: #28a745;
+  height: 100px;
+  padding: 0 180px;
+  display: grid;
+  width: 100%;
+  align-items: center;
+  grid-template-columns: repeat(2, 550px);
+  grid-template-rows: 100px;
+}
+#containerHeader #heading {
+  margin: 0;
+  font-size: 40px;
+  color: white;
+}
+#containerHeader #search input {
+  width: 550px;
+  padding: 5px;
+}/*# sourceMappingURL=Header.css.map */

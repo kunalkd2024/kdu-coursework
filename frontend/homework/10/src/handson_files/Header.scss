@@ -1,0 +1,21 @@
+#containerHeader {
+  background-color: #28a745;
+  height: 100px;
+  padding: 0 180px;
+  display: grid;
+  width: 100%;
+  align-items: center;
+  grid-template-columns: repeat(2, 550px);
+  grid-template-rows: 100px;
+  #heading {
+    margin: 0;
+    font-size: 40px;
+    color: white;
+  }
+  #search {
+    input {
+      width: 550px;
+      padding: 5px;
+    }
+  }
+}

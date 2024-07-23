@@ -1,0 +1,27 @@
+#ContainerItems h2 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+#ContainerItems .item-container {
+  display: grid;
+  width: 97%;
+}
+#ContainerItems .item-container .item-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  padding: 12px 10px;
+}
+#ContainerItems .item-container .item-row span {
+  padding: 5px;
+  flex-grow: 1;
+}
+#ContainerItems .item-container .item-row button {
+  padding: 9px;
+  background-color: red;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+}/*# sourceMappingURL=Items.css.map */
