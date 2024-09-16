@@ -1,0 +1,12 @@
+#container2 {
+  border: 2px solid #d89337;
+  background-color: #a5f0af;
+  display: grid;
+  grid-template-rows: 100px 300px;
+  padding: 1rem 0 0 1.5rem;
+  color: #28913c;
+}
+#container2 #heading {
+  justify-self: center;
+  color: #eb7d00;
+}/*# sourceMappingURL=Hobbies.css.map */

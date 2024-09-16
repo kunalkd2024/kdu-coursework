@@ -1,0 +1,14 @@
+#details {
+  padding-bottom: 2rem;
+}
+#details .detail-item {
+  font-size: 1rem;
+}
+
+#mid-section {
+  display: grid;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+  grid-template-columns: repeat(2, 600px);
+  grid-template-rows: 400px;
+}/*# sourceMappingURL=InfoCard.css.map */
