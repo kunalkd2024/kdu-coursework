@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kickdrum Official Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to Kickdrum Official Site</h1>
+        <p id="subHeaderLine">Mitigate technical risk. Maximize business impact.</p>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main>
+
+        <!-- Home Section -->
+        <section id="home">
+            <article>
+                <h2>Home Section</h2>
+                <img src="kickdrum.jpg" alt="Kickdrum about image">
+                <p class="para">We are <strong>enterprise-grade</strong> engineers, architects, and strategists. With a <em>design-driven</em> philosophy, our development approach decreases technical debt, improves customer experiences, and increases enterprise value.</p>
+
+                <p class="para">We partner with both investors and their portfolio companies across the full lifecycle - from diligence through divestiture – to identify, plan, and execute technology strategies for <strong>revenue growth<sup>*</sup></strong>, <strong>profit optimization<sub>+</sub></strong>, and <strong><del>value enhancement</del>*</strong>.</p>
+
+                <p class="para">Our work pre- and post-transaction is investment-driven - from our proven maturity assessment model to our value creation solutions, we bring real-world operating wisdom to your process.</p>
+
+                <blockquote id="quote">
+                    <p>"From our proven maturity assessment model to our value creation solutions, we bring real-world operating wisdom to your process."</p>
+                </blockquote>
+            </article>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <article>
+                <h2>Services Section</h2>
+                <p>Discover the services we offer to meet your needs.</p>
+
+                <ol>
+                    <li>
+                        <h4>Technology Maturity & Risk</h4>
+                        <p>Description of Technology Maturity & Risk service.</p>
+                    </li>
+                    <li>
+                        <h4>Open Source Risk</h4>
+                        <p>Description of Open Source Risk service.</p>
+                    </li>
+                    <li>
+                        <h4>Source Code Evaluation</h4>
+                        <p>Description of Source Code Evaluation service.</p>
+                    </li>
+                </ol>
+            </article>
+        </section>
+
+        <!-- Survey Section -->
+        <section id="survey">
+            <article>
+                <h2>Survey Section</h2>
+
+                <!-- Survey Form -->
+                <form method="post">
+
+                    <!-- Textarea for Problem Brief -->
+                    <div>
+                        <label for="textarea">Give a brief about the problem you would like us to resolve :</label>
+                        <br>
+                        <textarea tabindex="0" id="textarea" name="textarea" rows="6" cols="80"></textarea>
+                    </div>
+                    <br>
+
+                    <!-- Radio Buttons for Service Selection -->
+                    <div>
+                        <label>Which service would you like to choose : </label>
+                        <br>
+                        <label for="radio1"><input tabindex="0" type="radio" id="radio1" name="radio" value="option1"> Technology Maturity & Risk</label>
+                        <br>
+                        <label for="radio2"><input type="radio" id="radio2" name="radio" value="option2"> Open Source Risk</label>
+                        <br>
+                        <label for="radio3"><input type="radio" id="radio3" name="radio" value="option3"> Source Code Evaluation</label>
+                    </div>
+                    <br>
+
+                    <!-- Checkboxes for Self-Identification -->
+                    <div>
+                        <label>How would you identify yourself: </label>
+                        <br>
+                        <label for="checkbox1"><input tabindex="0" type="checkbox" id="checkbox1" name="checkbox1" value="check1"> Individual</label>
+                        <br>
+                        <label for="checkbox2"><input tabindex="0" type="checkbox" id="checkbox2" name="checkbox2" value="check2"> Business</label>
+                    </div>
+                    <br>
+
+                    <!-- Dropdown for How Did You Hear About Us -->
+                    <div>
+                        <label for="select">How did you get to know about us : </label>
+                        <select id="select" name="select">
+                            <option tabindex="0" value="option1">Online</option>
+                            <option value="option2">Referral</option>
+                            <option value="option3">LinkedIn</option>
+                        </select>
+                        <br>
+                    </div>
+
+                    <!-- Additional User Information -->
+                    <h4>Let's stay connected. Sign up below : </h4>
+
+                    <div>
+                        <label for="username">Username : </label>
+                        <input tabindex="0" type="text" id="username" name="username" placeholder="What should we call you ?" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="password">Password : </label>
+                        <input tabindex="0" type="password" id="password" name="password" placeholder="Make sure no one's looking" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="number">Enter your age : </label>
+                        <input tabindex="0" type="number" id="number" name="number" min="1" max="100">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="tel">Telephone : </label>
+                        <input tabindex="0" type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+                    </div>
+                    <br>
+                    <div class="country-search">
+                        <label for="search">Search your Country:</label>
+                        <div class="search-input-container">
+                            <input tabindex="0" type="search" id="search" name="search" placeholder="Enter a country name">
+                        </div>
+                    </div>
+                    <br>
+
+                    <!-- Submit and Reset Buttons -->
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+
+                </form>
+            </article>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <article>
+                <h2>Contact Section</h2>
+                <p>Get in touch with us through the provided contact information.</p>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Aside Section for Latest Updates -->
+    <aside>
+        <h3>Latest Updates</h3>
+        <p>Stay tuned for the latest news and updates.</p>
+    </aside>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2022 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

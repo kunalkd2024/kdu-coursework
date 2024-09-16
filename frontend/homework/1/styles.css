@@ -1,0 +1,55 @@
+h1 {
+    color: blue;
+}
+
+.para {
+    background-color: blueviolet;
+    color: cornsilk;
+}
+
+#quote {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    color: whitesmoke;
+    background-color: green;
+}
+
+#subHeaderLine::first-letter{
+    font-weight: bold;
+    font-size: 50px;
+    color: brown;
+}
+
+nav a {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-decoration: none;
+}
+
+li > h4 {
+    text-decoration:underline;
+}
+
+main + aside {
+    background-color: aquamarine;
+}
+
+aside ~ footer {
+    font-size: x-large;
+}
+
+#services {
+    padding: 20px; 
+    border: 1px solid #000;
+    margin: 20px;
+    height: 400px;
+    width: 500px;
+    box-sizing: border-box;
+}
+
+ol {
+    box-sizing: content-box;
+    border: 6px solid #606;
+}
