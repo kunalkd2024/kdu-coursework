@@ -1,0 +1,374 @@
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-size: 19.2px;
+    background-color: black;
+    color: white;
+}
+
+.main-page {
+    display: grid;
+    grid-template-columns: 5fr 8fr;
+    nav {
+        position: fixed;
+        .navigation-section {
+            max-width: 280px;
+            padding: 5px 15px 0 80px;
+            border-right: 1px solid #292d2f;
+            .options {
+                display: grid;
+                margin-left: 30px;
+                grid-template-columns: 1fr 4fr;
+                grid-template-rows: repeat(12, 45px);
+                align-items: center;
+                font-size: 1.05rem;
+                .image {
+                    height: 30px;
+                    width: 30px;
+                }
+                #twitter_icon{
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+            .post {
+                background-color: #4696e6;
+                margin: 5px 0 0 17px;
+                border-radius: 59px;
+                width: 240px;
+                height: 45px;
+                display: grid;
+                justify-content: center;
+                align-content: center;
+            }
+            .nav-lower {
+                display: grid;
+                grid-template-columns: 50px 142px 1fr;
+                padding: 50px 0 15px 20px;
+                column-gap: 12px;
+                .image {
+                    height: 48px;
+                    width: 50px;
+                }
+                .names {
+                    display: grid;
+                    row-gap: 2px;
+                    margin-bottom: 5px;
+                    font-size: smaller;
+                    align-self: center;
+                    #username {
+                        font-size: smaller;
+                        color: #6d7176;
+                    }
+                }
+                #more {
+                    justify-self: stretch;
+                    align-self: self-start;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+    main {
+        margin-left: 368px;
+        width: 600px;
+        border-right: 1px solid #292d2f;
+        .upper-bar {
+            height: 2.75rem;
+            font-size: 0.8rem;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 5fr 5fr 1.5fr;
+            border-bottom: 1px solid #292d2f;
+            #following {
+                color: #656a6e;
+            }
+            .image {
+                width: 1.65rem;
+                height: 1.75rem;
+                padding-left: 1rem;
+            }
+        }
+        .tweet-box {
+            .desktop{
+                border-bottom: 1px solid #292d2f;
+                padding-bottom: 0.25rem;
+                .post-input {
+                    display: grid;
+                    grid-template-columns: 1fr 9fr;
+                    .image {
+                        padding: 0.5rem;
+                        padding-right: 0.4rem;
+                        height: 2.25rem;
+                        width: 2.25rem;
+                    }
+                    input {
+                        color: white;
+                        background-color: black;
+                        align-self: center;
+                        border: none;
+                        font-size: 1rem;
+                    }
+                }
+                .tweet-btn {
+                    display: grid;
+                    grid-template-columns: 5fr 1fr;
+                    grid-template-rows: 1.85rem;
+                    padding-bottom: 0.3rem;
+                    #options {
+                        justify-self: start;
+                        align-self: center;
+                        padding-left: 3.1rem;
+                        .image {
+                            height: 1rem;
+                            margin-right: 0.5rem;
+                        }
+                    }
+                    #postButton {
+                        display: grid;
+                        margin: 0 0.85rem;
+                        align-content: center;
+                        justify-content: center;
+                        font-size: smaller;
+                        color: #808080;
+                        background-color: #0f4e78;
+                        border-radius: 1rem;
+                    }
+                }
+            }
+            .mobile {
+                display: none;
+            }
+        }
+        .posts {
+            .post {
+                border-bottom: 1px solid #292d2f;
+                padding-bottom: 0.4rem;
+                .post-details {
+                    display: grid;
+                    grid-template-columns: 10% auto 5%;
+                    .image-user {
+                        padding: 0.5rem;
+                        padding-right: 0.25rem;
+                        height: 2.25rem;
+                        width: 2.25rem;
+                    }
+                    #mid {
+                        display: grid;
+                        grid-template-rows: auto auto;
+                        .names {
+                            padding-top: 0.5rem;
+                            align-self: last baseline;
+                            padding-bottom: 0.2rem;
+                            font-size: smaller;
+                            #username, #time {
+                                font-size: smaller;
+                                color: #6d7176;
+                            }
+                            #dot {
+                                height: 0.15rem;
+                                display: inline-block;
+                                width: 0.15rem;
+                                margin-bottom: 0.15rem;
+                                border-radius: 2rem;
+                                background-color: #6d7176;
+                            }
+                        }
+                        .content {
+                            font-size: smaller;
+                            span {
+                                color: #1d9bf0;
+                            }
+                        }
+                    }
+                    #dots {
+                        padding-top: 0.25rem;
+                        color: #6d7176;
+                    }
+                }
+                .post-options {
+                    padding-top: 0.5rem;
+                    display: grid;
+                    grid-template-columns: 9% auto 6%;
+                    .icons {
+                        display: grid;
+                        grid-auto-flow: column;
+                        justify-content: space-between;
+                        margin-right: 0.1rem;
+                    }
+                    
+                    .image {
+                        align-content: center;
+                        margin-left: 0.15rem;
+                        width: 1.15rem;
+                        height: 1rem;
+                    }
+                }
+            }
+            #post2 {
+                .post-image {
+                    border-radius: 2rem;
+                    width: 24rem;
+                    height: auto;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            #post3 {
+                .post-gif {
+                    border-radius: 3rem;
+                    display: block;
+                    width: 23rem;
+                    height: 25rem;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+}
+
+#mid-new {
+    display: grid;
+    grid-template-rows: auto auto;
+    .names {
+        padding-top: 0.5rem;
+        align-self: last baseline;
+        padding-bottom: 0.2rem;
+        font-size: smaller;
+        #username, #time {
+            font-size: smaller;
+            color: #6d7176;
+        }
+        #dot {
+            height: 0.15rem;
+            display: inline-block;
+            width: 0.15rem;
+            margin-bottom: 0.15rem;
+            border-radius: 2rem;
+            background-color: #6d7176;
+        }
+    }
+    .content {
+        font-size: smaller;
+        img {
+            padding-top: 0.5rem;
+            border-radius: 2rem;
+            width: 24rem;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+
+@media screen and (max-width: 414px){
+    html {
+        font-size: 0.85rem;
+        .main-page {
+            width: 100%; 
+            display: block;
+            margin: 0;
+            padding: 0;
+            nav {
+                display: none;
+            }
+            main {
+                margin-left: 0;
+                width: auto;
+                border-right: none;
+                .tweet-box{
+                    .desktop {
+                        display: none;
+                    }
+                    .mobile {
+                        display: grid;
+                        border-bottom: 1px solid #292d2f;
+                        .top {
+                            margin: 0.6rem 0.5rem 0.2rem 0.5rem;
+                            font-size: 0.9rem;
+                            display: grid;
+                            grid-template-columns: 4fr 1fr 1fr;
+                            grid-template-rows: 1.9rem;
+                            justify-items: center;
+                            align-items: center;
+                            .image {
+                                height: 0.9rem;
+                                width: 0.9rem;
+                            }
+                            #arrow {
+                                justify-self: start;
+                                padding-left: 0.4rem;
+                                padding-top: 0.1rem;
+                            }
+                            #drafts {
+                                color: #1d9bf0;
+                            }
+                            #post {
+                                justify-self: stretch;
+                                align-self: stretch;
+                                display: grid;
+                                justify-content: center;
+                                align-content: center;
+                                border-radius: 2rem;
+                                color: #808080;
+                                background-color: #0f4e78;
+                                margin: 0 0.5rem;
+                            }
+                        }
+                        .post-input {
+                            display: grid;
+                            grid-template-columns: 1fr 9fr;
+                            .image {
+                                padding: 0.5rem;
+                                padding-right: 0.4rem;
+                                height: 2.25rem;
+                                width: 2.25rem;
+                            }
+                            input {
+                                color: white;
+                                background-color: black;
+                                align-self: center;
+                                border: none;
+                                font-size: 1rem;
+                            }
+                        }
+                        .global {
+                            display: grid;
+                            grid-template-columns: 5% auto;
+                            grid-template-rows: 2rem;
+                            margin: 2.5rem 0.5rem 0 0.5rem;
+                            border-bottom: 1px solid #292d2f;
+                            padding-left: 0.6rem;
+                            .image {
+                                height: 0.9rem;
+                                width: 1rem;
+                                padding-top: 0.04rem;
+                            }
+                            #text {
+                                color: #1d9bf0;
+                                font-size: 0.9rem;
+                                padding-left: 0.13rem;
+                            }
+                        }
+                        .options {
+                            justify-self: start;
+                            align-self: center;
+                            padding: 1rem 0 0.5rem 1rem;
+                            .image {
+                                height: 1rem;
+                                margin-right: 0.5rem;
+                            }
+                        }
+                    }
+                } 
+            }
+        }
+    }
+}

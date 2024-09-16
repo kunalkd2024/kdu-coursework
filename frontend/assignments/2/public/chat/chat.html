@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>X</title>
+    <link rel="stylesheet" href="chat.css" />
+  </head>
+  <body class="chat-page">
+    <nav>
+      <div class="navigation-section">
+        <div class="options">
+          <div>
+            <img
+              class="image"
+              id="twitter_icon"
+              src="../../data/icons/twitter_icon.png"
+              alt="twitter_icon"
+            />
+          </div>
+          <div></div>
+          <div>
+            <img
+              id="homeImage"
+              class="image"
+              src="../../data/icons/home_icon.png"
+              alt="home_icon"
+            />
+          </div>
+          <div id="home"><strong>Home</strong></div>
+          <div>
+            <img
+              class="image"
+              src="../../data/icons/search_icon.png"
+              alt="search_icon"
+            />
+          </div>
+          <div>Explore</div>
+          <div>
+            <img
+              class="image"
+              src="../../data/icons/notification_icon.png"
+              alt="notification_icon"
+            />
+          </div>
+          <div>Notifications</div>
+          <div>
+            <img
+              class="image"
+              src="../../data/icons/messages_icon.png"
+              alt="messages_icon"
+            />
+          </div>
+          <div>Messages</div>
+          <div>
+            <img
+              class="image"
+              src="../../data/icons/grok_icon.png"
+              alt="grok_icon"
+            />
+          </div>
+          <div>Grok</div>
+          <div>
+            <img
+              class="image"
+              src="../../data/icons/lists_icon.png"
+              alt="lists_icon"
+            />
+          </div>
+          <div>Lists</div>
+          <div>
+            <img
+              class="image"
+              src="../../data/icons/bookmark_icon.png"
+              alt="bookmark_icon"
+            />
+          </div>
+          <div>Bookmarks</div>
+          <div>
+            <img
+              class="image"
+              src="../../data/icons/communities_icon.png"
+              alt="communities_icon"
+            />
+          </div>
+          <div>Communities</div>
+          <div>
+            <img
+              class="image"
+              src="../../data/icons/premium_icon.png"
+              alt="premium_icon"
+            />
+          </div>
+          <div>Premium</div>
+          <div>
+            <img
+              class="image"
+              src="../../data/icons/profile_icon.png"
+              alt="profile_icon"
+            />
+          </div>
+          <div>Profile</div>
+          <div>
+            <img
+              class="image"
+              src="../../data/icons/more_icon.png"
+              alt="more_icon"
+            />
+          </div>
+          <div>More</div>
+        </div>
+        <div class="post"><strong>Post</strong></div>
+        <div class="nav-lower">
+          <div>
+            <img class="image" src="../../data/icons/n_icon.png" alt="n_icon" />
+          </div>
+          <div class="names">
+            <div><strong>Nitesh Gupta</strong></div>
+            <div id="username">@nit_hck</div>
+          </div>
+          <div id="more"><strong>...</strong></div>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section id="left">
+        <h3 id="heading">Messages</h3>
+        <div id="users">
+          <img src="../../data/icons/user2.png" alt="user2" />
+          <span><strong>Nitesh Gupta</strong></span>
+          <span id="username">@nit_hck</span>
+        </div>
+      </section>
+      <section id="right">
+        <h4 id="user">Nitesh Gupta</h4>
+        <div id="chat"></div>
+        <div id="container">
+          <div id="input-div">
+            <input
+              type="text"
+              id="msgInput"
+              placeholder="Start a new message"
+            />
+            <img id="sendMessage" src="../../data/icons/send.png" alt="send" />
+          </div>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://cdn.socket.io/4.7.4/socket.io.min.js"
+      integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../main-page/main.js"></script>
+    <script src="./chat.js"></script>
+  </body>
+</html>
